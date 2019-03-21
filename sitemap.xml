@@ -13,6 +13,12 @@
   </url>
   
   <url>
+    <loc>https://ppmoon.github.io/categories/mysql/</loc>
+    <lastmod>2019-03-20T19:44:01+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://ppmoon.github.io/posts/</loc>
     <lastmod>2019-03-20T19:44:01+08:00</lastmod>
     <priority>0</priority>
@@ -20,12 +26,6 @@
   
   <url>
     <loc>https://ppmoon.github.io/series/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ppmoon.github.io/categories/sql/</loc>
-    <lastmod>2019-03-20T19:44:01+08:00</lastmod>
     <priority>0</priority>
   </url>
   
