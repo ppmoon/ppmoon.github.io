@@ -5,7 +5,6 @@
     <link>https://ppmoon.github.io/</link>
     <description>Recent content on ppmoon&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zn-Hans</language>
     <lastBuildDate>Fri, 22 Mar 2019 17:30:54 +0800</lastBuildDate>
     
 	<atom:link href="https://ppmoon.github.io/index.xml" rel="self" type="application/rss+xml" />
@@ -17,7 +16,15 @@
       <pubDate>Fri, 22 Mar 2019 17:30:54 +0800</pubDate>
       
       <guid>https://ppmoon.github.io/posts/talk-about-mysql-operation/</guid>
-      <description>在开始讨论Mysql的基本操作之前我们需要先明确主体，即我们操作的是什么？下面我们忽略一些具体细节来了解一下Mysql这款数据库管理数据的结构和单元。 graph TD; Mysql--Database1; Mysql--Database2; Mysql--Database3; Database1--Table1; Database1--Table2; Database1--Table3; Database2--Table4; Database3--Table5; Database3--Table6; Table3--Data1; Table3--Data2; 通过上图我们了解到Mysql可以管理多个数据库，每一个数据库又可以管理多个表，表里又管理了千千万万的数据；我们使用Mysql操作的就是数据库，数据库中的表格以及表格当中的数据。 接下来我们需要学习的内容围绕下面的5个问题： 如何</description>
+      <description>在开始讨论Mysql的基本操作之前我们需要先明确主体，即我们操作的是什么？下面我们忽略一些具体细节来了解一下Mysql这款数据库管理数据的结构和单元。
+graph TD; Mysql--Database1; Mysql--Database2; Mysql--Database3; Database1--Table1; Database1--Table2; Database1--Table3; Database2--Table4; Database3--Table5; Database3--Table6; Table3--Data1; Table3--Data2;  通过上图我们了解到Mysql可以管理多个数据库，每一个数据库又可以管理多个表，表里又管理了千千万万的数据；我们使用Mysql操作的就是数据库，数据库中的表格以及表格当中的数据。
+接下来我们需要学习的内容围绕下面的5个问题：
+ 如何创建一个数据库？ 如何创建一个表？ 如何在表中创建数据？ 如何从表中检索数据？ 如何操作多个表？  如何创建一个数据库？ 使用*create*命令用来创建数据库，命令格式为：
+create database 数据库名称;  如果我们想创建一个test的数据库我们可以写：
+create database test;  这样我们就创建了一个名称为test的数据库了 后面我们会发现*create*命令不仅可以创建数据库，还可以创建表以及一些其他东西。
+如何查看刚刚创建的数据库呢？ 我们可以先使用*show*命令用来查看现在Mysql都管理了哪些数据库。
+mysql&amp;gt; show databases; +----------+ | Database | +----------+ | mysql | | test | | tmp | +----------+  *show*这个命令就如同字面翻译一样，显示，显示什么？ 显示databases，显示数据库，在后面我们会多次使用show这个命令。命令当中的数据库这个英文单词是复数形式，意味着显示很多数据库。（如果输入单数形式的database会显示错误，因为就没有这条命令，这里的提示只是为了方便记忆和理解）最后像其他大部分语言一样，命令语句结束以后要加一个分号用以表示命令输入完了。 如果你输入的命令有误Mysql会提示如下错误：
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near &#39;database&#39; at line 1  这意味着我们的命令语法错误了，不符合Mysql的语法规则。错误会告诉我们错误的地方大概在哪里。</description>
     </item>
     
     <item>
@@ -26,7 +33,10 @@
       <pubDate>Wed, 20 Mar 2019 19:44:01 +0800</pubDate>
       
       <guid>https://ppmoon.github.io/posts/learn-how-to-read-mysql-manual/</guid>
-      <description>mysql不同的版本会有不同的语法特性，如何才能知道当前版本的语法是什么样子的呢？最好的办法就是查看mysql的帮助手册。 查看mysql的手册只需要一个问号 + 关键词 就可以了： 比如我要查看show命令的使用说明可以直接在mysql的控制台输入 ? show mysql&amp;gt; ? show 注意问号后面有空格。 就可以得到show命令的使用说明 Name: &#39;SHOW&#39; Description: SHOW has many forms that provide information about databases, tables, columns, or status information about the server. This section describes those following: SHOW {BINARY | MASTER} LOGS SHOW BINLOG EVENTS [IN &#39;log_name&#39;] [FROM pos] [LIMIT [offset,] row_count] ······ flexibility in specifying</description>
+      <description>mysql不同的版本会有不同的语法特性，如何才能知道当前版本的语法是什么样子的呢？最好的办法就是查看mysql的帮助手册。
+查看mysql的手册只需要一个问号 + 关键词 就可以了： 比如我要查看show命令的使用说明可以直接在mysql的控制台输入 ? show
+mysql&amp;gt; ? show  注意问号后面有空格。 就可以得到show命令的使用说明
+Name: &#39;SHOW&#39; Description: SHOW has many forms that provide information about databases, tables, columns, or status information about the server. This section describes those following: SHOW {BINARY | MASTER} LOGS SHOW BINLOG EVENTS [IN &#39;log_name&#39;] [FROM pos] [LIMIT [offset,] row_count] ······ flexibility in specifying which rows to display. See http://dev.mysql.com/doc/refman/5.7/en/extended-show.html. URL: http://dev.mysql.com/doc/refman/5.7/en/show.html  同理我们可以输入 ? select ?</description>
     </item>
     
   </channel>
