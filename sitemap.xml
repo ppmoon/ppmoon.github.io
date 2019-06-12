@@ -8,6 +8,22 @@
   </url>
   
   <url>
+    <loc>https://ppmoon.github.io/posts/learn-how-to-read-mysql-manual/</loc>
+    <lastmod>2019-03-20T19:44:01+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ppmoon.github.io/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ppmoon.github.io/tags/mysql/</loc>
+    <lastmod>2019-03-22T17:30:54+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://ppmoon.github.io/posts/</loc>
     <lastmod>2019-03-22T17:30:54+08:00</lastmod>
     <priority>0</priority>
@@ -20,24 +36,8 @@
   </url>
   
   <url>
-    <loc>https://ppmoon.github.io/tags/mysql/</loc>
-    <lastmod>2019-03-22T17:30:54+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://ppmoon.github.io/</loc>
     <lastmod>2019-03-22T17:30:54+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ppmoon.github.io/posts/learn-how-to-read-mysql-manual/</loc>
-    <lastmod>2019-03-20T19:44:01+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ppmoon.github.io/categories/</loc>
     <priority>0</priority>
   </url>
   
