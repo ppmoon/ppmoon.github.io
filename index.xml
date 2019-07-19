@@ -3,21 +3,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>PPmoon&#39;s Blog</title>
-    <link>http://localhost:1313/</link>
+    <link>https://ppmoon.github.io/</link>
     <description>Recent content on PPmoon&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Fri, 19 Jul 2019 00:00:00 +0000</lastBuildDate>
     
-        <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://ppmoon.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>About</title>
-      <link>http://localhost:1313/about/</link>
+      <link>https://ppmoon.github.io/about/</link>
       <pubDate>Fri, 19 Jul 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/about/</guid>
+      <guid>https://ppmoon.github.io/about/</guid>
       
         <description>&lt;p&gt;这是PPmoon的Blog&lt;/p&gt;
 </description>
@@ -26,10 +26,10 @@
     
     <item>
       <title>Mysql基本操作</title>
-      <link>http://localhost:1313/post/talk-about-mysql-operation/</link>
+      <link>https://ppmoon.github.io/post/talk-about-mysql-operation/</link>
       <pubDate>Fri, 22 Mar 2019 17:30:54 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/talk-about-mysql-operation/</guid>
+      <guid>https://ppmoon.github.io/post/talk-about-mysql-operation/</guid>
       
         <description>
 
@@ -384,10 +384,10 @@ Claws   1998-03-17      birthday Gave him a new flea collar&lt;/pre&gt;&lt;/td&g
     
     <item>
       <title>学习如何使用mysql的手册</title>
-      <link>http://localhost:1313/post/learn-how-to-read-mysql-manual/</link>
+      <link>https://ppmoon.github.io/post/learn-how-to-read-mysql-manual/</link>
       <pubDate>Wed, 20 Mar 2019 19:44:01 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/learn-how-to-read-mysql-manual/</guid>
+      <guid>https://ppmoon.github.io/post/learn-how-to-read-mysql-manual/</guid>
       
         <description>
 
