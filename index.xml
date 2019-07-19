@@ -1,42 +1,454 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>ppmoon&#39;s blog</title>
-    <link>https://ppmoon.github.io/</link>
-    <description>Recent content on ppmoon&#39;s blog</description>
+    <title>PPmoon&#39;s Blog</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content on PPmoon&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 22 Mar 2019 17:30:54 +0800</lastBuildDate>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 19 Jul 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://ppmoon.github.io/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>About</title>
+      <link>http://localhost:1313/about/</link>
+      <pubDate>Fri, 19 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/about/</guid>
+      
+        <description>&lt;p&gt;这是PPmoon的Blog&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
       <title>Mysql基本操作</title>
-      <link>https://ppmoon.github.io/posts/talk-about-mysql-operation/</link>
+      <link>http://localhost:1313/post/talk-about-mysql-operation/</link>
       <pubDate>Fri, 22 Mar 2019 17:30:54 +0800</pubDate>
       
-      <guid>https://ppmoon.github.io/posts/talk-about-mysql-operation/</guid>
-      <description>在开始讨论Mysql的基本操作之前我们需要先明确主体，即我们操作的是什么？下面我们忽略一些具体细节来了解一下Mysql这款数据库管理数据的结构和单元。
-graph TD; Mysql--Database1; Mysql--Database2; Mysql--Database3; Database1--Table1; Database1--Table2; Database1--Table3; Database2--Table4; Database3--Table5; Database3--Table6; Table3--Data1; Table3--Data2;  通过上图我们了解到Mysql可以管理多个数据库，每一个数据库又可以管理多个表，表里又管理了千千万万的数据；我们使用Mysql操作的就是数据库，数据库中的表格以及表格当中的数据。
-接下来我们需要学习的内容围绕下面的5个问题：
- 如何创建一个数据库？ 如何创建一个表？ 如何在表中创建数据？ 如何从表中检索数据？ 如何操作多个表？  如何创建一个数据库？ 使用*create*命令用来创建数据库，命令格式为：
-create database 数据库名称;  如果我们想创建一个test的数据库我们可以写：
-create database test;  这样我们就创建了一个名称为test的数据库了 后面我们会发现*create*命令不仅可以创建数据库，还可以创建表以及一些其他东西。
-如何查看刚刚创建的数据库呢？ 我们可以先使用*show*命令用来查看现在Mysql都管理了哪些数据库。
-mysql&amp;gt; show databases; +----------+ | Database | +----------+ | mysql | | test | | tmp | +----------+  *show*这个命令就如同字面翻译一样，显示，显示什么？ 显示databases，显示数据库，在后面我们会多次使用show这个命令。命令当中的数据库这个英文单词是复数形式，意味着显示很多数据库。（如果输入单数形式的database会显示错误，因为就没有这条命令，这里的提示只是为了方便记忆和理解）最后像其他大部分语言一样，命令语句结束以后要加一个分号用以表示命令输入完了。 如果你输入的命令有误Mysql会提示如下错误：
-ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near &#39;database&#39; at line 1  这意味着我们的命令语法错误了，不符合Mysql的语法规则。错误会告诉我们错误的地方大概在哪里。</description>
+      <guid>http://localhost:1313/post/talk-about-mysql-operation/</guid>
+      
+        <description>
+
+&lt;p&gt;在开始讨论Mysql的基本操作之前我们需要先明确主体，即我们操作的是什么？下面我们忽略一些具体细节来了解一下Mysql这款数据库管理数据的结构和单元。&lt;/p&gt;
+
+&lt;div class=&#34;mermaid&#34;&gt;
+graph TD;
+    Mysql--&gt;Database1;
+    Mysql--&gt;Database2;
+    Mysql--&gt;Database3;
+    Database1--&gt;Table1;
+    Database1--&gt;Table2;
+    Database1--&gt;Table3;
+    Database2--&gt;Table4;
+    Database3--&gt;Table5;
+    Database3--&gt;Table6;
+    Table3--&gt;Data1;
+    Table3--&gt;Data2;
+&lt;/div&gt;
+
+&lt;p&gt;通过上图我们了解到Mysql可以管理多个数据库，每一个数据库又可以管理多个表，表里又管理了千千万万的数据；我们使用Mysql操作的就是数据库，数据库中的表格以及表格当中的数据。&lt;/p&gt;
+
+&lt;p&gt;接下来我们需要学习的内容围绕下面的5个问题：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;如何创建一个数据库？&lt;/li&gt;
+&lt;li&gt;如何创建一个表？&lt;/li&gt;
+&lt;li&gt;如何在表中创建数据？&lt;/li&gt;
+&lt;li&gt;如何从表中检索数据？&lt;/li&gt;
+&lt;li&gt;如何操作多个表？&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&#34;如何创建一个数据库&#34;&gt;如何创建一个数据库？&lt;/h1&gt;
+
+&lt;p&gt;使用*create*命令用来创建数据库，命令格式为：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;create database 数据库名称;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;如果我们想创建一个test的数据库我们可以写：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;create database test;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;这样我们就创建了一个名称为test的数据库了
+后面我们会发现*create*命令不仅可以创建数据库，还可以创建表以及一些其他东西。&lt;/p&gt;
+
+&lt;h2 id=&#34;如何查看刚刚创建的数据库呢&#34;&gt;如何查看刚刚创建的数据库呢？&lt;/h2&gt;
+
+&lt;p&gt;我们可以先使用*show*命令用来查看现在Mysql都管理了哪些数据库。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;mysql&amp;gt; show databases;
++----------+
+| Database |
++----------+
+| mysql    |
+| test     |
+| tmp      |
++----------+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;*show*这个命令就如同字面翻译一样，显示，显示什么？ 显示databases，显示数据库，在后面我们会多次使用show这个命令。命令当中的数据库这个英文单词是复数形式，意味着显示很多数据库。（如果输入单数形式的database会显示错误，因为就没有这条命令，这里的提示只是为了方便记忆和理解）最后像其他大部分语言一样，命令语句结束以后要加一个分号用以表示命令输入完了。
+如果你输入的命令有误Mysql会提示如下错误：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near &amp;#39;database&amp;#39; at line 1&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;这意味着我们的命令语法错误了，不符合Mysql的语法规则。错误会告诉我们错误的地方大概在哪里。&lt;/p&gt;
+
+&lt;h2 id=&#34;使用数据库&#34;&gt;使用数据库&lt;/h2&gt;
+
+&lt;p&gt;创建好数据库以后我们还要让mysql知道我们当前要操作的是那个数据库。使用*use*命令来告诉mysql我们正在操作的数据库是哪一个。语法为&lt;em&gt;use 数据库名称;&lt;/em&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;use test;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;这样mysql就会知道我们当前正在操作的数据库是test数据库，方便后续的命令执行。
+如果没有使用*use*命令去创建数据库，mysql会返回给我们一个错误提示：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;mysql&amp;gt; create table test;
+ERROR 1046 (3D000): No database selected&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;错误1046没有数据库被选择。&lt;/p&gt;
+
+&lt;h1 id=&#34;如何创建一个表&#34;&gt;如何创建一个表？&lt;/h1&gt;
+
+&lt;p&gt;在创建表之前我们要先简单的了解下表的构成。我们以下面这张表举例子&lt;/p&gt;
+
+&lt;p&gt;|name|owner|species|sex|birth|death|
+|&amp;mdash;|&amp;mdash;|&amp;mdash;|&amp;mdash;|&amp;mdash;|&amp;mdash;|&amp;mdash;|
+|Fluffy|Harold|cat|f|1993-02-04||
+|Bowser|Diane|dog|m|1979-08-31|1995-07-29|&lt;/p&gt;
+
+&lt;p&gt;正如我们在数学课上学习到的那样，一个表格由行和列组成，其中表头即宠物名称（name）,主人（owner）,物种（species）,性别（sex）,出生日期（birth）,死亡日期（death）在mysql当中我们称之为字段。表头之外的每一行就代表一行数据。我们可以在每一行的字段（单元格）当中设置什么样的数据，取决于我们对该字段定义什么样子的字段数据类型。计算机不能直接理解人类语言，所以我们要对人类语言的信息进行数据分类，比如日期，数字，字符这样的分类，我们就称之为数据类型。&lt;/p&gt;
+
+&lt;p&gt;现在我们对表的结构有一定的了解以后就可以开始创建表了。
+涉及到创建的命令我们马上想到的就是*create*命令。创建表和创建数据库的命令大同小异语法为&lt;em&gt;create table 表明 (字段名称 字段数据类型（显示长度）……)&lt;/em&gt;
+比如我们创建一个pet表，表当中涉及的字段属性包括宠物名称（name）,主人（owner）,物种（species）,性别（sex）,出生日期（birth）,死亡日期（death）：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;CREATE TABLE pet (name VARCHAR(20), owner VARCHAR(20),species VARCHAR(20), sex CHAR(1), birth DATE, death DATE);&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;注：mysql的命令是不区分大小写的，所以大写的CREATE和小写的create是一样的。&lt;/p&gt;
+
+&lt;p&gt;通过上面的命令我们就可以创建一个pet宠物表。表中包含若干字段，比如name，我们设定的字段类型就是varchar表示的是字符类型，字符类型可以存储文字语言，字段类型后面还有一个括号，括号里面的值表示的是显示的长度，比如int(2),整数类型显示长度2，表示不管你的数值是多少，最少可以看到两个数字。假如你存的数值的3，没有满两位，就会在前面补零。假如你的数值是150，超过了显示宽度，则直接显示原始值，不做补零操作。&lt;/p&gt;
+
+&lt;h2 id=&#34;如何查看刚刚创建的表&#34;&gt;如何查看刚刚创建的表&lt;/h2&gt;
+
+&lt;p&gt;我们可以通过*show*命令来查看我们刚刚创建的表：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;mysql&amp;gt; show tables;
++----------------+
+| Tables_in_test |
++----------------+
+| Tickets64      |
+| channel        |
+| pet            |
+| user_relation  |
++----------------+
+4 rows in set (0.00 sec)&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;和查看数据的命令十分类似，我相信你已经发现其中的关系了。&lt;/p&gt;
+
+&lt;h1 id=&#34;如何在表中创建数据&#34;&gt;如何在表中创建数据？&lt;/h1&gt;
+
+&lt;p&gt;有两个命令可以用来在表中创建数据*LOAD DATA*和&lt;em&gt;INSERT&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;load-data命令导入数据&#34;&gt;LOAD DATA命令导入数据&lt;/h2&gt;
+
+&lt;p&gt;LOAD DATA可以把文件当中的数据导入到表格当中。&lt;/p&gt;
+
+&lt;p&gt;首先我们创建一个文件pet.txt&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;Fluffy  Harold  cat     f       1993-02-04      \N
+Claws   Gwen    cat     m       1994-03-17      \N
+Buffy   Harold  dog     f       1989-05-13      \N
+Fang    Benny   dog     m       1990-08-27      \N
+Bowser  Diane   dog     \N      1979-08-31      1995-07-29
+Chirpy  Gwen    bird    f       1998-09-11      \N
+Slim    Benny   snake   m       1996-04-29      \N&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;其中按照空格区分数据字段的，*\N*表示的null，如果这个字段没有数据可以用null表示。&lt;/p&gt;
+
+&lt;p&gt;然后我们进入mysql,使用*LOAD DATA*语法载入pet.txt的数据&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;LOAD DATA LOCAL INFILE &amp;#39;/home/ppmoon/pet.txt&amp;#39; INTO TABLE pet;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;我们先简单解析下命令语法，*LOAD DATA*表示载入数据，载入什么地方的数据？LOCAL表示载入当前客户端所在的电脑的数据。因为你的mysql服务端很有可能是在远程服务器上的。如果在语句当中去掉LOCAL，载入数据的位置就是mysql服务端所在的电脑上的位置。*INFILE*指的是导入文件，还有一个命令是*OUTFILE*是导出数据。*INFILE*命令后面就是文件存放的路径了，这部分路径是linux系统的文件路径。如果是Windows假设你的文件在d盘可以写成*d:\pet.txt*最后*INTO*表明数据导入的方向*TABLE*表示数据插入到表中，不是别的地方，表的名字是什么？是pet。&lt;/p&gt;
+
+&lt;h2 id=&#34;insert命令插入数据&#34;&gt;INSERT命令插入数据&lt;/h2&gt;
+
+&lt;p&gt;除了LOAD DATA之外我们还可以使用*INSERT*命令插入数据。语法格式为：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;INSERT INTO 表明 VALUES (&amp;#39;字段1&amp;#39;,&amp;#39;字段2&amp;#39;……);&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;如果我们想向pet表当中插入一条新数据，我们可以这样写：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;INSERT INTO pet VALUES (&amp;#39;Puffball&amp;#39;,&amp;#39;Diane&amp;#39;,&amp;#39;hamster&amp;#39;,&amp;#39;f&amp;#39;,&amp;#39;1999-03-30&amp;#39;,NULL);&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;VALUES当中的字段顺序和表当中的字段顺序一一对应即可，如果没有数据可以使用NULL占位。至此你一定发现了，mysql的命令几乎就是和英文直译是一样的，稍加理解参照手册就可以学会。&lt;/p&gt;
+
+&lt;h1 id=&#34;如何从表中检索数据&#34;&gt;如何从表中检索数据？&lt;/h1&gt;
+
+&lt;p&gt;使用*SELECT*命令来查看数据，语法格式为*SELECT 字段名 FROM 表名*，select英文直译挑选的意思，选择后面加上需要挑选的字段，也就是表格的列，如果要挑选出所有就使用*来表示。最后通过 from 命令来表明挑选那个表格当中的数据。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;mysql&amp;gt; select * from pet;
++--------+--------+---------+------+------------+------------+
+| name   | owner  | species | sex  | birth      | death      |
++--------+--------+---------+------+------------+------------+
+| Fluffy | Harold | cat     | f    | 1993-02-04 | NULL       |
+| Claws  | Gwen   | cat     | m    | 1994-03-17 | NULL       |
+| Buffy  | Harold | dog     | f    | 1989-05-13 | NULL       |
+| Fang   | Benny  | dog     | m    | 1990-08-27 | NULL       |
+| Bowser | Diane  | dog     | NULL | 1979-08-31 | 1995-07-29 |
+| Chirpy | Gwen   | bird    | f    | 1998-09-11 | NULL       |
+| Slim   | Benny  | snake   | m    | 1996-04-29 | NULL       |
++--------+--------+---------+------+------------+------------+
+7 rows in set (0.00 sec)&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h1 id=&#34;如何操作多个表&#34;&gt;如何操作多个表？&lt;/h1&gt;
+
+&lt;p&gt;是的，我们的数据不可能只存储在一个表当中，很多时候，数据是分散在不同的表格当中的，这时候我们需要一些关联表格进行查询的命令。&lt;/p&gt;
+
+&lt;p&gt;我们需要再创建一个表event用来记录一些宠物相关的备忘记录，pet表和event表通过name字段进行关联：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;CREATE TABLE event (name VARCHAR(20), date DATE, type VARCHAR(15), remark VARCHAR(255));&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;使用*LOAD DATA*导入数据
+文件event.txt&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;9
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;Fluffy  1995-05-15      litter  4 kittens, 3 female, 1 male
+Buffy   1993-06-23      litter  5 puppies, 2 female, 3 male
+Buffy   1994-06-19      litter  3 puppies, 3 female
+Chirpy  1999-03-21      vet     needed beak straightened
+Slim    1997-08-03      vet     broken rib
+Bowser  1991-10-12      kennel  \N
+Fang    1991-10-12      kennel  \N
+Fang    1998-08-28      birthday Gave him a new chew toy
+Claws   1998-03-17      birthday Gave him a new flea collar&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;命令：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;LOAD DATA LOCAL INFILE &amp;#39;/home/ppmoon/event.txt&amp;#39; INTO TABLE event;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;这里我们需要用到一个新命令*JOIN*这个命令用来将两个表关联起来。如果我们通过两个表的数据查询出宠物的备注信息我们可以这样写：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;mysql&amp;gt; SELECT pet.name,remark FROM pet JOIN event ON pet.name = event.name WHERE event.type = &amp;#39;litter&amp;#39;;
++--------+-----------------------------+
+| name   | remark                      |
++--------+-----------------------------+
+| Fluffy | 4 kittens, 3 female, 1 male |
+| Buffy  | 5 puppies, 2 female, 3 male |
+| Buffy  | 3 puppies, 3 female         |
++--------+-----------------------------+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;命令解析：
+1.多个表有重复名称字段的时候，可以使用 表名.字段名的方式来明确字段，比如pet.name指的就是pet表当中的name
+2.JOIN语句后面加表明ON用来声明两个表通过什么字段进行关联
+3.WHERE命令用来筛选条件。&lt;/p&gt;
+</description>
+      
     </item>
     
     <item>
       <title>学习如何使用mysql的手册</title>
-      <link>https://ppmoon.github.io/posts/learn-how-to-read-mysql-manual/</link>
+      <link>http://localhost:1313/post/learn-how-to-read-mysql-manual/</link>
       <pubDate>Wed, 20 Mar 2019 19:44:01 +0800</pubDate>
       
-      <guid>https://ppmoon.github.io/posts/learn-how-to-read-mysql-manual/</guid>
-      <description>mysql不同的版本会有不同的语法特性，如何才能知道当前版本的语法是什么样子的呢？最好的办法就是查看mysql的帮助手册。
-查看mysql的手册只需要一个问号 + 关键词 就可以了： 比如我要查看show命令的使用说明可以直接在mysql的控制台输入 ? show
-mysql&amp;gt; ? show  注意问号后面有空格。 就可以得到show命令的使用说明
-Name: &#39;SHOW&#39; Description: SHOW has many forms that provide information about databases, tables, columns, or status information about the server. This section describes those following: SHOW {BINARY | MASTER} LOGS SHOW BINLOG EVENTS [IN &#39;log_name&#39;] [FROM pos] [LIMIT [offset,] row_count] ······ flexibility in specifying which rows to display. See http://dev.mysql.com/doc/refman/5.7/en/extended-show.html. URL: http://dev.mysql.com/doc/refman/5.7/en/show.html  同理我们可以输入 ? select ?</description>
+      <guid>http://localhost:1313/post/learn-how-to-read-mysql-manual/</guid>
+      
+        <description>
+
+&lt;p&gt;mysql不同的版本会有不同的语法特性，如何才能知道当前版本的语法是什么样子的呢？最好的办法就是查看mysql的帮助手册。&lt;/p&gt;
+
+&lt;p&gt;查看mysql的手册只需要一个问号 + 关键词 就可以了：
+比如我要查看show命令的使用说明可以直接在mysql的控制台输入 ? show&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;mysql&amp;gt; ? show&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;注意问号后面有空格。
+就可以得到show命令的使用说明&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;Name: &amp;#39;SHOW&amp;#39;
+Description:
+SHOW has many forms that provide information about databases, tables,
+columns, or status information about the server. This section describes
+those following:
+
+SHOW {BINARY | MASTER} LOGS
+SHOW BINLOG EVENTS [IN &amp;#39;log_name&amp;#39;] [FROM pos] [LIMIT [offset,] row_count]
+
+······
+
+flexibility in specifying which rows to display. See
+http://dev.mysql.com/doc/refman/5.7/en/extended-show.html.
+
+URL: http://dev.mysql.com/doc/refman/5.7/en/show.html&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;同理我们可以输入 ? select ? int ? update 等等查看命令数据类型在当前版本的解释说明。这个小技巧在我们学习mysql和日常使用当中都会产生事半功倍的效果哦。&lt;/p&gt;
+
+&lt;h2 id=&#34;思考&#34;&gt;思考&lt;/h2&gt;
+
+&lt;p&gt;让我们思考一下 问号 + 命令 查看mysql手册这条命令的逻辑。
+问号 ？ 表示疑问，命令表示疑问的主体。? show 是不是颇有一种 what is show? 的感觉？这样看起来就更像是在更电脑提问了吧。&lt;/p&gt;
+</description>
+      
     </item>
     
   </channel>
