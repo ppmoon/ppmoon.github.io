@@ -59,7 +59,7 @@
     <item>
       <title>windows10安装mysql5.7</title>
       <link>https://ppmoon.github.io/post/mysql/windows10-install-mysql5-7/</link>
-      <pubDate>Fri, 27 Jan 2006 17:30:54 +0800</pubDate>
+      <pubDate>Wed, 27 Jan 2016 17:30:54 +0800</pubDate>
       
       <guid>https://ppmoon.github.io/post/mysql/windows10-install-mysql5-7/</guid>
       <description>1.首先在mysql的官方网站下载mysql community server 5.7 由于我的win10是64位的所以我选择64zip下载。 http://dev.mysql.com/downloads/mysql/ 不用注册直接点击No thanks,just start my downlload. 2.解</description>
