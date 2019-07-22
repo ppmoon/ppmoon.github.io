@@ -26,10 +26,10 @@
     
     <item>
       <title>Mysql基本操作</title>
-      <link>https://ppmoon.github.io/post/talk-about-mysql-operation/</link>
+      <link>https://ppmoon.github.io/post/mysql/talk-about-mysql-operation/</link>
       <pubDate>Fri, 22 Mar 2019 17:30:54 +0800</pubDate>
       
-      <guid>https://ppmoon.github.io/post/talk-about-mysql-operation/</guid>
+      <guid>https://ppmoon.github.io/post/mysql/talk-about-mysql-operation/</guid>
       
         <description>
 
@@ -384,10 +384,10 @@ Claws   1998-03-17      birthday Gave him a new flea collar&lt;/pre&gt;&lt;/td&g
     
     <item>
       <title>学习如何使用mysql的手册</title>
-      <link>https://ppmoon.github.io/post/learn-how-to-read-mysql-manual/</link>
+      <link>https://ppmoon.github.io/post/mysql/learn-how-to-read-mysql-manual/</link>
       <pubDate>Wed, 20 Mar 2019 19:44:01 +0800</pubDate>
       
-      <guid>https://ppmoon.github.io/post/learn-how-to-read-mysql-manual/</guid>
+      <guid>https://ppmoon.github.io/post/mysql/learn-how-to-read-mysql-manual/</guid>
       
         <description>
 
@@ -447,6 +447,221 @@ URL: http://dev.mysql.com/doc/refman/5.7/en/show.html&lt;/pre&gt;&lt;/td&gt;&lt;
 
 &lt;p&gt;让我们思考一下 问号 + 命令 查看mysql手册这条命令的逻辑。
 问号 ？ 表示疑问，命令表示疑问的主体。? show 是不是颇有一种 what is show? 的感觉？这样看起来就更像是在更电脑提问了吧。&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>SQL的IN操作符</title>
+      <link>https://ppmoon.github.io/post/mysql/sql-operation-in/</link>
+      <pubDate>Wed, 30 Aug 2017 23:00:01 +0800</pubDate>
+      
+      <guid>https://ppmoon.github.io/post/mysql/sql-operation-in/</guid>
+      
+        <description>
+
+&lt;h2 id=&#34;in操作符&#34;&gt;IN操作符&lt;/h2&gt;
+
+&lt;p&gt;IN操作符允许我们在WHERE子句中规定多个值。
+这个操作符可以让我们在表中选取有一定规律的特定值，比如多个同样的订单选取最新的一个。&lt;/p&gt;
+
+&lt;p&gt;SQL IN 语法&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span class=&#34;k&#34;&gt;SELECT&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;列名&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;FROM&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;表明&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;WHERE&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;列名&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;IN&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;value1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;value2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,...)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;例子&#34;&gt;例子&lt;/h2&gt;
+
+&lt;p&gt;简单的例子网上有，这里说一个复杂点的例子&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://upload-images.jianshu.io/upload_images/677473-186cc777919401fc.png&#34; alt=&#34;image.png&#34; /&gt;
+有如上图所示的表&lt;/p&gt;
+
+&lt;h4 id=&#34;查询要求&#34;&gt;查询要求&lt;/h4&gt;
+
+&lt;p&gt;1.我们要在指定chain_id上只查询一条时间最新的数据。比如ID 4和5 chain_id都为4，但是我们只能显示7月3日的ID为5的数据。
+2.这条数据的on_off如果为0我们是不抽取这条数据出来的。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span class=&#34;k&#34;&gt;SELECT&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;FROM&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;file&lt;/span&gt; 
+&lt;span class=&#34;k&#34;&gt;WHERE&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;created_at&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;SELECT&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;MAX&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;created_at&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;FROM&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;file&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;WHERE&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;chain_id&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;on_off&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;GROUP&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;BY&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;chain_id&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h4 id=&#34;查询结果&#34;&gt;查询结果&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://upload-images.jianshu.io/upload_images/677473-eca0a610de9fcaf0.png&#34; alt=&#34;image.png&#34; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;sql语句的解析&#34;&gt;SQL语句的解析&lt;/h4&gt;
+
+&lt;p&gt;上面使用了两个WHERE&amp;hellip;IN，第一层我们想找时间最大的数据条目，第二层我们要求同时这个数据是我们的制定的chain_id,并且on_off不能为0 。同时满足三个条件得出我们的结果。
+实际上是先找出了指定chain_id上on_off不为0的数据，然后再从这个数据集当中找到指定chain_id时间最大的那些数据。&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>mysql修改字段名称</title>
+      <link>https://ppmoon.github.io/post/mysql/mysql-change-column-name/</link>
+      <pubDate>Fri, 15 Apr 2016 22:00:01 +0800</pubDate>
+      
+      <guid>https://ppmoon.github.io/post/mysql/mysql-change-column-name/</guid>
+      
+        <description>
+
+&lt;h1 id=&#34;在mysql当中如果字段创建以后想修改名字怎么办&#34;&gt;在mysql当中如果字段创建以后想修改名字怎么办？&lt;/h1&gt;
+
+&lt;p&gt;alter table 表名 change 旧字段名 新字段名 字段属性;
+举个例子：&lt;/p&gt;
+
+&lt;p&gt;修改users表的name字段为username&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span class=&#34;k&#34;&gt;alter&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;table&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;users&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;change&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;name&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;username&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;varchar&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;25&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;个人觉得这个change的方法是销毁掉原来的字段再在原来的地方常见新字段的方法来更换字段名称。&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>mysql ERROR 1820 (HY000)解决办法</title>
+      <link>https://ppmoon.github.io/post/mysql/mysql-error-1820-hy000-solution/</link>
+      <pubDate>Mon, 01 Feb 2016 19:44:01 +0800</pubDate>
+      
+      <guid>https://ppmoon.github.io/post/mysql/mysql-error-1820-hy000-solution/</guid>
+      
+        <description>&lt;p&gt;本解决办法是针对如何错误提示：
+ERROR 1820 (HY000): You must reset your password using ALTER USER statement before executing this statement.
+为了保证安全，mysql会对用户的密码设置使用期限，我们只要让他不过期就可以了。
+step 1: SET PASSWORD = PASSWORD(‘写你的新密码‘);
+step 2: ALTER USER ‘root‘@‘localhost‘ PASSWORD EXPIRE NEVER;
+step 3: flush privileges;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://upload-images.jianshu.io/upload_images/677473-9be5717310a573d1.png&#34; alt=&#34;图示&#34; /&gt;&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>windows10安装mysql5.7</title>
+      <link>https://ppmoon.github.io/post/mysql/windows10-install-mysql5-7/</link>
+      <pubDate>Fri, 27 Jan 2006 17:30:54 +0800</pubDate>
+      
+      <guid>https://ppmoon.github.io/post/mysql/windows10-install-mysql5-7/</guid>
+      
+        <description>
+
+&lt;h2 id=&#34;1-首先在mysql的官方网站下载mysql-community-server-5-7&#34;&gt;1.首先在mysql的官方网站下载mysql community server 5.7&lt;/h2&gt;
+
+&lt;p&gt;由于我的win10是64位的所以我选择64zip下载。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://dev.mysql.com/downloads/mysql/&#34;&gt;http://dev.mysql.com/downloads/mysql/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://upload-images.jianshu.io/upload_images/677473-eb53d313cb10a643.png&#34; alt=&#34;mysql下载页面
+&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;不用注册直接点击No thanks,just start my downlload.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://upload-images.jianshu.io/upload_images/677473-6f62b804ca626676.png&#34; alt=&#34;不用注册&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;2-解压文件为bin文件夹添加到环境变量&#34;&gt;2.解压文件为bin文件夹添加到环境变量&lt;/h2&gt;
+
+&lt;p&gt;这部分很重要不赘述了。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://upload-images.jianshu.io/upload_images/677473-892ca7aef4a4e1e1.png&#34; alt=&#34;添加环境变量&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;3-配置mysql配置文件&#34;&gt;3.配置mysql配置文件&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://upload-images.jianshu.io/upload_images/677473-2e7fa21425341d63.png&#34; alt=&#34;mysql配置文件&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;配置mysql程序所在目录和mysql数据存放目录&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://upload-images.jianshu.io/upload_images/677473-9f176b64c397503f.png&#34; alt=&#34;目录&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;记得去掉前面的#号&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://upload-images.jianshu.io/upload_images/677473-76fb364de7c1e2b2.png&#34; alt=&#34;配置&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;4-启动mysql&#34;&gt;4.启动mysql&lt;/h2&gt;
+
+&lt;p&gt;以管理员身份启动cmd&lt;/p&gt;
+
+&lt;p&gt;进入到mysql的解压的bin目录，在这里进行操作的目的是为了防止出错。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://upload-images.jianshu.io/upload_images/677473-14a980adc054790b.png&#34; alt=&#34;进入mysql解压文件夹&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;输入&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;mysqld -install&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;在windows上安装mysql的服务。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://upload-images.jianshu.io/upload_images/677473-30f38363b4775294.png&#34; alt=&#34;安装mysql服务&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;初始化data数据，这一步很重要不然mysql不能启动。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;mysqld &amp;ndash;initialize&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;这个时候我们才能看见data文件夹&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://upload-images.jianshu.io/upload_images/677473-c3a884a9409190a6.png&#34; alt=&#34;data&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;net start mysql&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://upload-images.jianshu.io/upload_images/677473-a900a3decfcd2bd9.png&#34; alt=&#34;启动mysql&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;我们可以在windows服务选项当中看到mysql的服务项目，可以设置成手动，使用的时候才启动它。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://upload-images.jianshu.io/upload_images/677473-738a1703d5476222.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&#34; alt=&#34;服务&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;5-进入mysql&#34;&gt;5.进入mysql&lt;/h2&gt;
+
+&lt;p&gt;因为我们初始化过mysql，mysql默认给我们一个初始密码，但是我没有设定保存到哪里所以我们找不到这个密码了O(∩_∩)O！！！&lt;/p&gt;
+
+&lt;p&gt;不过没关系我们修改mysql配置文件my.ini，在配置文件mysqld下面插入skip-grant-tables,让我们跳过验证，再进入到mysql。这里注意要重启mysql配置才会生效。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://upload-images.jianshu.io/upload_images/677473-0c1fe311189901ed.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&#34; alt=&#34;跳过验证&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://upload-images.jianshu.io/upload_images/677473-a3eb2be55b9dff57.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&#34; alt=&#34;进入mysql&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;6-重置root密码&#34;&gt;6.重置root密码&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span class=&#34;k&#34;&gt;update&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;mysql&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;user&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;authentication_string&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;password&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;123456&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;where&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;user&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;root&amp;#39;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;and&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;Host&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;localhost&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;img src=&#34;http://upload-images.jianshu.io/upload_images/677473-df49d7939914034b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&#34; alt=&#34;重置密码&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;这样我们就可以用我们设置的密码登录mysql了。&lt;/p&gt;
 </description>
       
     </item>
