@@ -24,8 +24,50 @@
   </url>
   
   <url>
+    <loc>https://ppmoon.github.io/post/golang/golang-reuse-http-request-body/</loc>
+    <lastmod>2018-10-20T15:10:01+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ppmoon.github.io/post/golang/golang-uint-cover-to-string/</loc>
+    <lastmod>2018-04-28T21:18:01+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ppmoon.github.io/post/golang/how-to-download-golang-org-package/</loc>
+    <lastmod>2018-04-25T12:14:01+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ppmoon.github.io/post/golang/how-to-write-a-cli-program-by-go/</loc>
+    <lastmod>2018-02-19T11:13:01+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ppmoon.github.io/post/golang/golang-cross-compile/</loc>
+    <lastmod>2018-02-16T14:44:01+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://ppmoon.github.io/post/mysql/sql-operation-in/</loc>
     <lastmod>2017-08-30T23:00:01+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ppmoon.github.io/post/golang/build-a-web-server-by-golang/</loc>
+    <lastmod>2017-04-19T01:27:01+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -58,6 +100,13 @@
   </url>
   
   <url>
+    <loc>https://ppmoon.github.io/tags/golang/</loc>
+    <lastmod>2018-10-20T15:10:01+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://ppmoon.github.io/tags/mysql/</loc>
     <lastmod>2019-03-22T17:30:54+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -80,7 +129,7 @@
   
   <url>
     <loc>https://ppmoon.github.io/tags/</loc>
-    <lastmod>2019-03-22T17:30:54+08:00</lastmod>
+    <lastmod>2018-10-20T15:10:01+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
