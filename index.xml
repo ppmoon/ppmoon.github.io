@@ -71,15 +71,48 @@ Mon, &lt;span class=&#34;m&#34;&gt;26&lt;/span&gt; Aug &lt;span class=&#34;m&#34
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;格式化数据可以直接使用加号，然后配合日期符号输出
-常用日期符号
-|  符号   | 代表意义  |
-|  &amp;mdash;-  | &amp;mdash;-  |
-| %Y  | 年 |
-| %m  | 月 |
-| %d  | 日 |
-| %H | 时 |
-| %M  | 分 |
-| %S | 秒 |&lt;/p&gt;
+常用日期符号&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;符号&lt;/th&gt;
+&lt;th&gt;代表意义&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;%Y&lt;/td&gt;
+&lt;td&gt;年&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;%m&lt;/td&gt;
+&lt;td&gt;月&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;%d&lt;/td&gt;
+&lt;td&gt;日&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;%H&lt;/td&gt;
+&lt;td&gt;时&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;%M&lt;/td&gt;
+&lt;td&gt;分&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;%S&lt;/td&gt;
+&lt;td&gt;秒&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 
 &lt;h2 id=&#34;获取昨天的时间&#34;&gt;获取昨天的时间&lt;/h2&gt;
 
@@ -276,10 +309,38 @@ ERROR 1046 (3D000): No database selected&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/t
 
 &lt;p&gt;在创建表之前我们要先简单的了解下表的构成。我们以下面这张表举例子&lt;/p&gt;
 
-&lt;p&gt;|name|owner|species|sex|birth|death|
-|&amp;mdash;|&amp;mdash;|&amp;mdash;|&amp;mdash;|&amp;mdash;|&amp;mdash;|&amp;mdash;|
-|Fluffy|Harold|cat|f|1993-02-04||
-|Bowser|Diane|dog|m|1979-08-31|1995-07-29|&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;name&lt;/th&gt;
+&lt;th&gt;owner&lt;/th&gt;
+&lt;th&gt;species&lt;/th&gt;
+&lt;th&gt;sex&lt;/th&gt;
+&lt;th&gt;birth&lt;/th&gt;
+&lt;th&gt;death&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Fluffy&lt;/td&gt;
+&lt;td&gt;Harold&lt;/td&gt;
+&lt;td&gt;cat&lt;/td&gt;
+&lt;td&gt;f&lt;/td&gt;
+&lt;td&gt;1993-02-04&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Bowser&lt;/td&gt;
+&lt;td&gt;Diane&lt;/td&gt;
+&lt;td&gt;dog&lt;/td&gt;
+&lt;td&gt;m&lt;/td&gt;
+&lt;td&gt;1979-08-31&lt;/td&gt;
+&lt;td&gt;1995-07-29&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 
 &lt;p&gt;正如我们在数学课上学习到的那样，一个表格由行和列组成，其中表头即宠物名称（name）,主人（owner）,物种（species）,性别（sex）,出生日期（birth）,死亡日期（death）在mysql当中我们称之为字段。表头之外的每一行就代表一行数据。我们可以在每一行的字段（单元格）当中设置什么样的数据，取决于我们对该字段定义什么样子的字段数据类型。计算机不能直接理解人类语言，所以我们要对人类语言的信息进行数据分类，比如日期，数字，字符这样的分类，我们就称之为数据类型。&lt;/p&gt;
 
@@ -989,12 +1050,41 @@ Language is English&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 -   GOOS：目标操作系统
 -   GOARCH：目标操作系统的架构&lt;/p&gt;
 
-&lt;p&gt;| OS | ARCH | OS version |
-| - | :-: | -: |
-| linux | 386 / amd64 / arm | &amp;gt;= Linux 2.6 |
-| darwin | 386 / amd64 | OS X (Snow Leopard + Lion) |
-| freebsd | 386 / amd64 | &amp;gt;= FreeBSD 7 |
-| windows | 386 / amd64 | &amp;gt;= Windows 2000 |&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;OS&lt;/th&gt;
+&lt;th&gt;ARCH&lt;/th&gt;
+&lt;th&gt;OS version&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;linux&lt;/td&gt;
+&lt;td&gt;386 / amd64 / arm&lt;/td&gt;
+&lt;td&gt;&amp;gt;= Linux 2.6&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;darwin&lt;/td&gt;
+&lt;td&gt;386 / amd64&lt;/td&gt;
+&lt;td&gt;OS X (Snow Leopard + Lion)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;freebsd&lt;/td&gt;
+&lt;td&gt;386 / amd64&lt;/td&gt;
+&lt;td&gt;&amp;gt;= FreeBSD 7&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;windows&lt;/td&gt;
+&lt;td&gt;386 / amd64&lt;/td&gt;
+&lt;td&gt;&amp;gt;= Windows 2000&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 
 &lt;p&gt;编译其他平台的时候根据上面表格参数执行编译就可以了。&lt;/p&gt;
 
