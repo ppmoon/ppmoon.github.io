@@ -25,6 +25,131 @@
     </item>
     
     <item>
+      <title>Mac如何在shell脚本当中获取时间</title>
+      <link>https://ppmoon.github.io/post/shell/mac-how-to-get-time-in-shell-script/</link>
+      <pubDate>Mon, 26 Aug 2019 14:00:00 +0800</pubDate>
+      
+      <guid>https://ppmoon.github.io/post/shell/mac-how-to-get-time-in-shell-script/</guid>
+      
+        <description>
+
+&lt;h1 id=&#34;mac如何在shell脚本当中获取时间&#34;&gt;Mac如何在shell脚本当中获取时间&lt;/h1&gt;
+
+&lt;h2 id=&#34;获取今天的时间&#34;&gt;获取今天的时间&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;date
+2019年 8月26日 星期一 14时02分23秒 CST&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;直接输入date就可以获取当前的时间（CST时间）&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;date -jnRu
+Mon, &lt;span class=&#34;m&#34;&gt;26&lt;/span&gt; Aug &lt;span class=&#34;m&#34;&gt;2019&lt;/span&gt; &lt;span class=&#34;m&#34;&gt;06&lt;/span&gt;:06:29 +0000&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;如果加上参数&lt;code&gt;-jnRu&lt;/code&gt;会显示格林威治时间(GMT)&lt;/p&gt;
+
+&lt;h2 id=&#34;时间格式化&#34;&gt;时间格式化&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;date +&lt;span class=&#34;s2&#34;&gt;&amp;#34;%Y-%m-%d %H:%M:%S&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;m&#34;&gt;2019&lt;/span&gt;-08-26 &lt;span class=&#34;m&#34;&gt;14&lt;/span&gt;:28:14&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;格式化数据可以直接使用加号，然后配合日期符号输出
+常用日期符号
+|  符号   | 代表意义  |
+|  &amp;mdash;-  | &amp;mdash;-  |
+| %Y  | 年 |
+| %m  | 月 |
+| %d  | 日 |
+| %H | 时 |
+| %M  | 分 |
+| %S | 秒 |&lt;/p&gt;
+
+&lt;h2 id=&#34;获取昨天的时间&#34;&gt;获取昨天的时间&lt;/h2&gt;
+
+&lt;p&gt;mac下的date命令计算时间的方法和linux会不太一样&lt;/p&gt;
+
+&lt;p&gt;命令参数为&lt;code&gt;[-v[+|-]val[ymwdHMS]]&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;date 后加 -v 加减一个值，最后填写格式化参数格式化输出。都是在当前时间的基础上进行加减运算的&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;date -v-1d +&lt;span class=&#34;s2&#34;&gt;&amp;#34;%Y-%m-%d&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;m&#34;&gt;2019&lt;/span&gt;-08-25
+date -v-1y +&lt;span class=&#34;s2&#34;&gt;&amp;#34;%Y-%m-%d&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;m&#34;&gt;2018&lt;/span&gt;-08-26
+date -v+1m +&lt;span class=&#34;s2&#34;&gt;&amp;#34;%Y-%m-%d&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;m&#34;&gt;2019&lt;/span&gt;-09-26
+date -v+1H +&lt;span class=&#34;s2&#34;&gt;&amp;#34;%Y-%m-%d %H:%M:%S&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;m&#34;&gt;2019&lt;/span&gt;-08-26 &lt;span class=&#34;m&#34;&gt;15&lt;/span&gt;:40:36
+date -v+1M +&lt;span class=&#34;s2&#34;&gt;&amp;#34;%Y-%m-%d %H:%M:%S&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;m&#34;&gt;2019&lt;/span&gt;-08-26 &lt;span class=&#34;m&#34;&gt;14&lt;/span&gt;:41:58
+date -v+1S +&lt;span class=&#34;s2&#34;&gt;&amp;#34;%Y-%m-%d %H:%M:%S&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;m&#34;&gt;2019&lt;/span&gt;-08-26 &lt;span class=&#34;m&#34;&gt;14&lt;/span&gt;:40:12&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;总结&#34;&gt;总结&lt;/h2&gt;
+
+&lt;p&gt;编写shell脚本执行的时候需要使用到时间，更多关于date命令的使用方法可以使用&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;man date&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;进行查看详细的使用方法或者输入一个错误的参数比如&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;date h
+date: illegal &lt;span class=&#34;nb&#34;&gt;time&lt;/span&gt; format
+usage: date &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;-jnRu&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;-d dst&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;-r seconds&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;-t west&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;-v&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;+&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;-&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;val&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;ymwdHMS&lt;span class=&#34;o&#34;&gt;]]&lt;/span&gt; ... 
+            &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;-f fmt date &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[[[&lt;/span&gt;mm&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;dd&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;HH&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;MM&lt;span class=&#34;o&#34;&gt;[[&lt;/span&gt;cc&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;yy&lt;span class=&#34;o&#34;&gt;][&lt;/span&gt;.ss&lt;span class=&#34;o&#34;&gt;]]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;+format&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;会提示提示部分使用方法。&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
       <title>Mysql基本操作</title>
       <link>https://ppmoon.github.io/post/mysql/talk-about-mysql-operation/</link>
       <pubDate>Fri, 22 Mar 2019 17:30:54 +0800</pubDate>
