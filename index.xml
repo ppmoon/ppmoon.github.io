@@ -25,6 +25,26 @@
     </item>
     
     <item>
+      <title>群晖NAS如何关机</title>
+      <link>https://ppmoon.github.io/post/nas/how-to-power-off-in-synology-nas/</link>
+      <pubDate>Mon, 16 Sep 2019 20:00:00 +0800</pubDate>
+      
+      <guid>https://ppmoon.github.io/post/nas/how-to-power-off-in-synology-nas/</guid>
+      
+        <description>
+
+&lt;h1 id=&#34;群晖nas如何关机&#34;&gt;群晖NAS如何关机？&lt;/h1&gt;
+
+&lt;p&gt;群辉NAS的关机按钮在DSM桌面任务栏右上。点击头像即可看到关机按钮。
+&lt;img src=&#34;https://i.loli.net/2019/09/16/8T2WQn4IYjcCMfe.png&#34; alt=&#34;群晖NAS关机&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;关机的过程当中请保持电源通电。群晖DSM在关机的过程当中会安全的结束一些正在运行的任务保证安全关机。
+关机过程当中群晖NAS前置面板的蓝色灯会闪烁，直到蓝灯不再闪烁群晖NAS才完成关机。这个时候就可以放心的拔掉电源啦。&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
       <title>Mac如何在shell脚本当中获取时间</title>
       <link>https://ppmoon.github.io/post/shell/mac-how-to-get-time-in-shell-script/</link>
       <pubDate>Mon, 26 Aug 2019 14:00:00 +0800</pubDate>
