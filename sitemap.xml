@@ -10,6 +10,13 @@
   </url>
   
   <url>
+    <loc>https://ppmoon.github.io/post/nas/how-to-adjust-the-led-indicator-light-brightness/</loc>
+    <lastmod>2019-09-17T20:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://ppmoon.github.io/post/nas/how-to-power-off-in-synology-nas/</loc>
     <lastmod>2019-09-16T20:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -129,7 +136,7 @@
   
   <url>
     <loc>https://ppmoon.github.io/tags/nas/</loc>
-    <lastmod>2019-09-16T20:00:00+08:00</lastmod>
+    <lastmod>2019-09-17T20:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -143,7 +150,7 @@
   
   <url>
     <loc>https://ppmoon.github.io/post/</loc>
-    <lastmod>2019-09-16T20:00:00+08:00</lastmod>
+    <lastmod>2019-09-17T20:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>

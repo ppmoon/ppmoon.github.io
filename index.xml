@@ -25,6 +25,27 @@
     </item>
     
     <item>
+      <title>群晖NAS如何调整LED指示灯的亮度</title>
+      <link>https://ppmoon.github.io/post/nas/how-to-adjust-the-led-indicator-light-brightness/</link>
+      <pubDate>Tue, 17 Sep 2019 20:00:00 +0800</pubDate>
+      
+      <guid>https://ppmoon.github.io/post/nas/how-to-adjust-the-led-indicator-light-brightness/</guid>
+      
+        <description>
+
+&lt;h1 id=&#34;群辉nas如何调整led指示灯的亮度&#34;&gt;群辉NAS如何调整LED指示灯的亮度&lt;/h1&gt;
+
+&lt;p&gt;NAS放在家里灯光太亮，影响夜间休息。那如何降低NAS前置面板的LED灯的亮度呢？&lt;/p&gt;
+
+&lt;p&gt;登录群辉的DSM系统。&lt;/p&gt;
+
+&lt;p&gt;点击控制面板，找到硬件与电源，调整LED亮度的控制杆，调节控制杆就可以调节亮度了。
+&lt;img src=&#34;https://raw.githubusercontent.com/ppmoon/picbed/master/img/20190917200356.png&#34; alt=&#34;LED指示灯亮度&#34; /&gt;&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
       <title>群晖NAS如何关机</title>
       <link>https://ppmoon.github.io/post/nas/how-to-power-off-in-synology-nas/</link>
       <pubDate>Mon, 16 Sep 2019 20:00:00 +0800</pubDate>
