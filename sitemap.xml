@@ -10,6 +10,13 @@
   </url>
   
   <url>
+    <loc>https://ppmoon.github.io/post/golang/golang-output-log-to-file-and-console/</loc>
+    <lastmod>2020-03-11T21:16:01+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://ppmoon.github.io/post/nas/how-to-adjust-the-led-indicator-light-brightness/</loc>
     <lastmod>2019-09-17T20:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -122,7 +129,7 @@
   
   <url>
     <loc>https://ppmoon.github.io/tags/golang/</loc>
-    <lastmod>2018-10-20T15:10:01+08:00</lastmod>
+    <lastmod>2020-03-11T21:16:01+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -150,7 +157,7 @@
   
   <url>
     <loc>https://ppmoon.github.io/post/</loc>
-    <lastmod>2019-09-17T20:00:00+08:00</lastmod>
+    <lastmod>2020-03-11T21:16:01+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -164,7 +171,7 @@
   
   <url>
     <loc>https://ppmoon.github.io/tags/</loc>
-    <lastmod>2018-10-20T15:10:01+08:00</lastmod>
+    <lastmod>2020-03-11T21:16:01+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
