@@ -10,6 +10,13 @@
   </url>
   
   <url>
+    <loc>https://ppmoon.github.io/post/golang/golang-interview-questions-is-balance-tree/</loc>
+    <lastmod>2020-06-28T00:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://ppmoon.github.io/post/golang/golang-interview-questions-binarry-tree-max-depth/</loc>
     <lastmod>2020-06-22T00:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -136,7 +143,7 @@
   
   <url>
     <loc>https://ppmoon.github.io/tags/golang/</loc>
-    <lastmod>2020-06-22T00:00:00+08:00</lastmod>
+    <lastmod>2020-06-28T00:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -164,7 +171,7 @@
   
   <url>
     <loc>https://ppmoon.github.io/post/</loc>
-    <lastmod>2020-06-22T00:00:00+08:00</lastmod>
+    <lastmod>2020-06-28T00:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -178,7 +185,7 @@
   
   <url>
     <loc>https://ppmoon.github.io/tags/</loc>
-    <lastmod>2020-06-22T00:00:00+08:00</lastmod>
+    <lastmod>2020-06-28T00:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>

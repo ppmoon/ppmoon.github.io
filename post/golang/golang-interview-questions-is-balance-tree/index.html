@@ -10,7 +10,7 @@
       enable_page_level_ads: true
     });
   </script>
-  <title>Golang面试题：二叉树的最大深度 - PPmoon&#39;s Blog</title>
+  <title>Golang面试题：是否是平衡的二叉树 - PPmoon&#39;s Blog</title>
   
 
 <meta name="renderer" content="webkit" />
@@ -30,7 +30,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="ppmoon" />
-  <meta name="description" content="问题：求二叉树的最大深度 给定一个二叉树,返回其最大深度。 示例： 1 2 3 4 5 1 / \ 2 3 / \ / \ 4 5 6 7 返回最大深度为3 解题思路 利用深度优先或者广" />
+  <meta name="description" content="问题：给定一个二叉树，判断其是否是高度平衡的二叉树 高度平衡的二叉树定义：一颗二叉树，每一个节点的左右子树的高度差的绝对值不超过1。 示例 1: 给定" />
 
   <meta name="keywords" content="ppmoon, golang, 技术分享" />
 
@@ -42,7 +42,7 @@
 <meta name="generator" content="Hugo 0.54.0" />
 
 
-<link rel="canonical" href="https://ppmoon.github.io/post/golang/golang-interview-questions-binarry-tree-max-depth/" />
+<link rel="canonical" href="https://ppmoon.github.io/post/golang/golang-interview-questions-is-balance-tree/" />
 
 
 
@@ -64,27 +64,27 @@
 
 
 
-<meta property="og:title" content="Golang面试题：二叉树的最大深度" />
-<meta property="og:description" content="问题：求二叉树的最大深度 给定一个二叉树,返回其最大深度。 示例： 1 2 3 4 5 1 / \ 2 3 / \ / \ 4 5 6 7 返回最大深度为3 解题思路 利用深度优先或者广" />
+<meta property="og:title" content="Golang面试题：是否是平衡的二叉树" />
+<meta property="og:description" content="问题：给定一个二叉树，判断其是否是高度平衡的二叉树 高度平衡的二叉树定义：一颗二叉树，每一个节点的左右子树的高度差的绝对值不超过1。 示例 1: 给定" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://ppmoon.github.io/post/golang/golang-interview-questions-binarry-tree-max-depth/" />
-<meta property="article:published_time" content="2020-06-22T00:00:00&#43;08:00"/>
-<meta property="article:modified_time" content="2020-06-22T00:00:00&#43;08:00"/>
+<meta property="og:url" content="https://ppmoon.github.io/post/golang/golang-interview-questions-is-balance-tree/" />
+<meta property="article:published_time" content="2020-06-28T00:00:00&#43;08:00"/>
+<meta property="article:modified_time" content="2020-06-28T00:00:00&#43;08:00"/>
 
-<meta itemprop="name" content="Golang面试题：二叉树的最大深度">
-<meta itemprop="description" content="问题：求二叉树的最大深度 给定一个二叉树,返回其最大深度。 示例： 1 2 3 4 5 1 / \ 2 3 / \ / \ 4 5 6 7 返回最大深度为3 解题思路 利用深度优先或者广">
+<meta itemprop="name" content="Golang面试题：是否是平衡的二叉树">
+<meta itemprop="description" content="问题：给定一个二叉树，判断其是否是高度平衡的二叉树 高度平衡的二叉树定义：一颗二叉树，每一个节点的左右子树的高度差的绝对值不超过1。 示例 1: 给定">
 
 
-<meta itemprop="datePublished" content="2020-06-22T00:00:00&#43;08:00" />
-<meta itemprop="dateModified" content="2020-06-22T00:00:00&#43;08:00" />
-<meta itemprop="wordCount" content="759">
+<meta itemprop="datePublished" content="2020-06-28T00:00:00&#43;08:00" />
+<meta itemprop="dateModified" content="2020-06-28T00:00:00&#43;08:00" />
+<meta itemprop="wordCount" content="652">
 
 
 
 <meta itemprop="keywords" content="golang," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Golang面试题：二叉树的最大深度"/>
-<meta name="twitter:description" content="问题：求二叉树的最大深度 给定一个二叉树,返回其最大深度。 示例： 1 2 3 4 5 1 / \ 2 3 / \ / \ 4 5 6 7 返回最大深度为3 解题思路 利用深度优先或者广"/>
+<meta name="twitter:title" content="Golang面试题：是否是平衡的二叉树"/>
+<meta name="twitter:description" content="问题：给定一个二叉树，判断其是否是高度平衡的二叉树 高度平衡的二叉树定义：一颗二叉树，每一个节点的左右子树的高度差的绝对值不超过1。 示例 1: 给定"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -330,11 +330,11 @@ if (!doNotTrack) {
           <article class="post bg-white">
     
     <header class="post-header">
-      <h1 class="post-title">Golang面试题：二叉树的最大深度</h1>
+      <h1 class="post-title">Golang面试题：是否是平衡的二叉树</h1>
       
       <div class="post-meta">
-        <time datetime="2020-06-22" class="post-time">
-          2020-06-22
+        <time datetime="2020-06-28" class="post-time">
+          2020-06-28
         </time>
         
         
@@ -354,18 +354,14 @@ if (!doNotTrack) {
   <div class="post-toc-content">
     <nav id="TableOfContents">
 <ul>
-<li><a href="#问题-求二叉树的最大深度">问题：求二叉树的最大深度</a></li>
-<li><a href="#解题思路">解题思路</a>
+<li><a href="#问题-给定一个二叉树-判断其是否是高度平衡的二叉树">问题：给定一个二叉树，判断其是否是高度平衡的二叉树</a></li>
+<li><a href="#解题思路">解题思路：</a>
 <ul>
-<li><a href="#二叉树的结构体">二叉树的结构体</a></li>
-<li><a href="#深度优先搜索">深度优先搜索</a>
-<ul>
-<li><a href="#主要思路">主要思路</a></li>
-</ul></li>
-<li><a href="#广度优先搜索">广度优先搜索</a>
-<ul>
-<li><a href="#主要思路-1">主要思路</a></li>
-</ul></li>
+<li><a href="#树节点的结构体">树节点的结构体</a></li>
+<li><a href="#判断大小和求绝对值的函数准备">判断大小和求绝对值的函数准备</a></li>
+<li><a href="#如何获取节点高度">如何获取节点高度？</a></li>
+<li><a href="#如何判断是否是高度平衡二叉树">如何判断是否是高度平衡二叉树</a></li>
+<li><a href="#完整代码">完整代码</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -376,10 +372,13 @@ if (!doNotTrack) {
     <div class="post-content">
       
 
-<h1 id="问题-求二叉树的最大深度">问题：求二叉树的最大深度</h1>
+<h1 id="问题-给定一个二叉树-判断其是否是高度平衡的二叉树">问题：给定一个二叉树，判断其是否是高度平衡的二叉树</h1>
 
-<p>给定一个二叉树,返回其最大深度。
-示例：</p>
+<p>高度平衡的二叉树定义：一颗二叉树，每一个节点的左右子树的高度差的绝对值不超过1。</p>
+
+<p>示例 1:</p>
+
+<p>给定二叉树 [3,9,20,null,null,15,7]</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt">1
@@ -389,20 +388,47 @@ if (!doNotTrack) {
 </span><span class="lnt">5
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">      1
-    /   \
-   2     3
-  / \   / \
- 4   5 6   7</pre></td></tr></table>
+<pre class="chroma">    3
+   / \
+  9  20
+    /  \
+   15   7</pre></td></tr></table>
 </div>
 </div>
-<p>返回最大深度为3</p>
+<p>返回 true</p>
 
-<h1 id="解题思路">解题思路</h1>
+<p>示例 2:</p>
 
-<p>利用深度优先或者广度优先遍历二叉树，找到树的最大深度。</p>
+<p>给定二叉树 [1,2,2,3,3,null,null,4,4]</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">       1
+      / \
+     2   2
+    / \
+   3   3
+  / \
+ 4   4</pre></td></tr></table>
+</div>
+</div>
+<p>返回 false</p>
 
-<h2 id="二叉树的结构体">二叉树的结构体</h2>
+<h1 id="解题思路">解题思路：</h1>
+
+<p>在理解题意以后，我们需要先分解下问题。首先要先获取节点高度，然后再再进行比对判断，判断每一个节点左右子树的高度差的绝对值是否超过1。</p>
+
+<p>我们需要了解如何遍历二叉树，这样才能知道树的高度。还要了解递归的思想可以让代码逻辑更加清晰。</p>
+
+<h2 id="树节点的结构体">树节点的结构体</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-golang" data-lang="golang"><span class="lnt">1
@@ -413,19 +439,13 @@ if (!doNotTrack) {
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-golang" data-lang="golang"><span class="kd">type</span> <span class="nx">TreeNode</span> <span class="kd">struct</span> <span class="p">{</span>
-	<span class="nx">left</span> <span class="o">*</span><span class="nx">TreeNode</span> <span class="c1">// 左子节点
-</span><span class="c1"></span>	<span class="nx">right</span> <span class="o">*</span><span class="nx">TreeNode</span> <span class="c1">// 右子节点
-</span><span class="c1"></span>	<span class="nx">value</span> <span class="kt">int</span> <span class="c1">// 值
-</span><span class="c1"></span><span class="p">}</span></code></pre></td></tr></table>
+    <span class="nx">left</span> <span class="o">*</span><span class="nx">TreeNode</span>
+    <span class="nx">right</span> <span class="o">*</span><span class="nx">TreeNode</span>
+    <span class="nx">value</span> <span class="kt">int</span>
+<span class="p">}</span></code></pre></td></tr></table>
 </div>
 </div>
-<h2 id="深度优先搜索">深度优先搜索</h2>
-
-<h3 id="主要思路">主要思路</h3>
-
-<p>1.深度优先搜索和二叉树的前序遍历比较类似。
-2.利用递归的方式不停下探树的深度。
-3.递归的终止条件是如果节点为空就返回0。然后判断左右子树最大值同时加1来表示当前节点的高度。</p>
+<h2 id="判断大小和求绝对值的函数准备">判断大小和求绝对值的函数准备</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-golang" data-lang="golang"><span class="lnt"> 1
@@ -442,30 +462,73 @@ if (!doNotTrack) {
 </span><span class="lnt">12
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-golang" data-lang="golang"><span class="kd">func</span> <span class="nf">maxDepth</span><span class="p">(</span><span class="nx">root</span> <span class="o">*</span><span class="nx">TreeNode</span><span class="p">)</span> <span class="kt">int</span> <span class="p">{</span>
-	<span class="c1">// 如果节点为空就不再递归下探深度
-</span><span class="c1"></span>	<span class="k">if</span> <span class="nx">root</span> <span class="o">==</span> <span class="kc">nil</span> <span class="p">{</span>
-		<span class="k">return</span> <span class="mi">0</span>
-	<span class="p">}</span>
-	<span class="nx">left</span> <span class="o">:=</span> <span class="nf">maxDepth</span><span class="p">(</span><span class="nx">root</span><span class="p">.</span><span class="nx">left</span><span class="p">)</span>
-	<span class="nx">right</span> <span class="o">:=</span> <span class="nf">maxDepth</span><span class="p">(</span><span class="nx">root</span><span class="p">.</span><span class="nx">right</span><span class="p">)</span>
-	<span class="k">if</span> <span class="nx">left</span> <span class="p">&gt;</span> <span class="nx">right</span> <span class="p">{</span>
-		<span class="k">return</span> <span class="nx">left</span> <span class="o">+</span> <span class="mi">1</span>
-	<span class="p">}</span>
-	<span class="k">return</span> <span class="nx">right</span> <span class="o">+</span> <span class="mi">1</span>
+<pre class="chroma"><code class="language-golang" data-lang="golang"><span class="kd">func</span> <span class="nf">max</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span> <span class="kt">int</span><span class="p">)</span> <span class="kt">int</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="nx">a</span> <span class="p">&gt;</span> <span class="nx">b</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">a</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nx">b</span>
+<span class="p">}</span>
+<span class="kd">func</span> <span class="nf">abs</span><span class="p">(</span><span class="nx">a</span> <span class="kt">int</span><span class="p">)</span> <span class="kt">int</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="nx">a</span> <span class="o">&gt;=</span><span class="mi">0</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">a</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="o">-</span><span class="nx">a</span>
 <span class="p">}</span></code></pre></td></tr></table>
 </div>
 </div>
-<p>时间复杂度：O(n)其中n为节点数量。因为每个节点都要访问一次
-空间复杂度：O(logN)其中N是节点数量。在树不是平衡的情况下，空间复杂度是O(N),比如树比较瘸腿一路左子树的情况下。但是如果树比较平衡的情况下空间复杂度是O(logN)。</p>
+<h2 id="如何获取节点高度">如何获取节点高度？</h2>
 
-<h2 id="广度优先搜索">广度优先搜索</h2>
+<p>利用深度遍历递归的去获取节点高度。利用递归不停向下寻找到节点为空的位置计算高度。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-golang" data-lang="golang"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-golang" data-lang="golang"><span class="kd">func</span> <span class="nf">getHeight</span><span class="p">(</span><span class="nx">root</span> <span class="o">*</span><span class="nx">TreeNode</span><span class="p">)</span> <span class="kt">int</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="nx">root</span> <span class="o">==</span> <span class="kc">nil</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="mi">0</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="mi">1</span> <span class="o">+</span> <span class="nf">max</span><span class="p">(</span><span class="nf">getHeight</span><span class="p">(</span><span class="nx">root</span><span class="p">.</span><span class="nx">left</span><span class="p">),</span><span class="nf">getHeight</span><span class="p">(</span><span class="nx">root</span><span class="p">.</span><span class="nx">right</span><span class="p">))</span>
+<span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="如何判断是否是高度平衡二叉树">如何判断是否是高度平衡二叉树</h2>
 
-<h3 id="主要思路-1">主要思路</h3>
-
-<p>1.广度优先搜索利用迭代的方式将每一层的节点都放入到队列当中。
-2.队列出队清空进入下一层。
-3.利用一个变量来标记深度。每次进入下一次都给这个变量加1来记录深度。</p>
+<p>通过递归的方式判断每一个节点二叉树的高度的绝对值是否大于1</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-golang" data-lang="golang"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-golang" data-lang="golang"><span class="kd">func</span> <span class="nf">isBalanced</span><span class="p">(</span><span class="nx">root</span> <span class="o">*</span><span class="nx">TreeNode</span><span class="p">)</span> <span class="kt">bool</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="nx">root</span> <span class="o">==</span> <span class="kc">nil</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="kc">true</span>
+    <span class="p">}</span>
+    <span class="c1">// 判断当前节点是否满足，不满足后面就不用看了。
+</span><span class="c1"></span>    <span class="k">if</span> <span class="nf">abs</span><span class="p">(</span><span class="nf">getHeight</span><span class="p">(</span><span class="nx">root</span><span class="p">.</span><span class="nx">left</span><span class="p">)</span><span class="o">-</span><span class="nf">getHeight</span><span class="p">(</span><span class="nx">root</span><span class="p">.</span><span class="nx">right</span><span class="p">))</span> <span class="p">&gt;</span> <span class="mi">1</span><span class="p">{</span>
+        <span class="k">return</span> <span class="kc">false</span>
+    <span class="p">}</span>
+    <span class="c1">// 如果满足条件继续向下递归，并返回结果。
+</span><span class="c1"></span>    <span class="k">return</span> <span class="nf">isBalanced</span><span class="p">(</span><span class="nx">root</span><span class="p">.</span><span class="nx">left</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="nf">isBalanced</span><span class="p">(</span><span class="nx">root</span><span class="p">.</span><span class="nx">right</span><span class="p">)</span>
+<span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="完整代码">完整代码</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-golang" data-lang="golang"><span class="lnt"> 1
@@ -492,37 +555,52 @@ if (!doNotTrack) {
 </span><span class="lnt">22
 </span><span class="lnt">23
 </span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-golang" data-lang="golang"><span class="kd">func</span> <span class="nf">maxDepth</span><span class="p">(</span><span class="nx">root</span> <span class="o">*</span><span class="nx">TreeNode</span><span class="p">)</span> <span class="kt">int</span> <span class="p">{</span>
-	<span class="c1">// 根节点如果为0直接返回0
-</span><span class="c1"></span>	<span class="k">if</span> <span class="nx">root</span> <span class="o">==</span> <span class="kc">nil</span> <span class="p">{</span>
-		<span class="k">return</span> <span class="mi">0</span>
-	<span class="p">}</span>
-	<span class="nx">queue</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">([]</span><span class="o">*</span><span class="nx">TreeNode</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span> <span class="c1">// 创建一个队列
-</span><span class="c1"></span>	<span class="nx">queue</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">queue</span><span class="p">,</span><span class="nx">root</span><span class="p">)</span> <span class="c1">// 把根节点放入队列
-</span><span class="c1"></span>	<span class="nx">depth</span> <span class="o">:=</span> <span class="mi">0</span> <span class="c1">// 声明深度变量
-</span><span class="c1"></span>	<span class="k">for</span> <span class="nb">len</span><span class="p">(</span><span class="nx">queue</span><span class="p">)</span> <span class="p">&gt;</span> <span class="mi">0</span> <span class="p">{</span> <span class="c1">// 队列里有值就一直循环
-</span><span class="c1"></span>		<span class="nx">size</span> <span class="o">:=</span> <span class="nb">len</span><span class="p">(</span><span class="nx">queue</span><span class="p">)</span> <span class="c1">// 这里要把当前一层的队列遍历一遍全部出队
-</span><span class="c1"></span>		<span class="k">for</span> <span class="nx">i</span><span class="o">:=</span><span class="mi">0</span><span class="p">;</span><span class="nx">i</span><span class="p">&lt;</span><span class="nx">size</span><span class="p">;</span><span class="nx">i</span><span class="o">++</span><span class="p">{</span>
-			<span class="nx">v</span> <span class="o">:=</span> <span class="nx">queue</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-			<span class="nx">queue</span> <span class="p">=</span> <span class="nx">queue</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="c1">// 出队
-</span><span class="c1"></span>			<span class="k">if</span> <span class="nx">v</span><span class="p">.</span><span class="nx">left</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-				<span class="nx">queue</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">queue</span><span class="p">,</span><span class="nx">v</span><span class="p">.</span><span class="nx">left</span><span class="p">)</span> <span class="c1">// 如果有左子树，就左子树入队
-</span><span class="c1"></span>			<span class="p">}</span>
-			<span class="k">if</span> <span class="nx">v</span><span class="p">.</span><span class="nx">right</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-				<span class="nx">quque</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">queue</span><span class="p">,</span><span class="nx">v</span><span class="p">.</span><span class="nx">right</span><span class="p">)</span> <span class="c1">// 如果有右子树，就右子树入队
-</span><span class="c1"></span>			<span class="p">}</span>
-		<span class="p">}</span>
-		<span class="nx">depth</span><span class="o">++</span> <span class="c1">// 清出一层后给变量加1
-</span><span class="c1"></span>	<span class="p">}</span>		
-	<span class="k">return</span> <span class="nx">depth</span>
+<pre class="chroma"><code class="language-golang" data-lang="golang"><span class="kd">type</span> <span class="nx">TreeNode</span> <span class="kd">struct</span> <span class="p">{</span>
+    <span class="nx">left</span> <span class="o">*</span><span class="nx">TreeNode</span>
+    <span class="nx">right</span> <span class="o">*</span><span class="nx">TreeNode</span>
+    <span class="nx">value</span> <span class="kt">int</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="nf">max</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span> <span class="kt">int</span><span class="p">)</span> <span class="kt">int</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="nx">a</span> <span class="p">&gt;</span> <span class="nx">b</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">a</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nx">b</span>
+<span class="p">}</span>
+<span class="kd">func</span> <span class="nf">abs</span><span class="p">(</span><span class="nx">a</span> <span class="kt">int</span><span class="p">)</span> <span class="kt">int</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="nx">a</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">a</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="o">-</span><span class="nx">a</span>
+<span class="p">}</span>
+<span class="kd">func</span> <span class="nf">getHeight</span><span class="p">(</span><span class="nx">root</span> <span class="o">*</span><span class="nx">TreeNode</span><span class="p">)</span> <span class="kt">int</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="nx">root</span> <span class="o">==</span> <span class="kc">nil</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="mi">0</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="mi">1</span> <span class="o">+</span> <span class="nf">max</span><span class="p">(</span><span class="nf">getHeight</span><span class="p">(</span><span class="nx">root</span><span class="p">.</span><span class="nx">left</span><span class="p">),</span><span class="nf">getHeight</span><span class="p">(</span><span class="nx">root</span><span class="p">.</span><span class="nx">right</span><span class="p">))</span>
+<span class="p">}</span>
+<span class="kd">func</span> <span class="nf">isBalanced</span><span class="p">(</span><span class="nx">root</span> <span class="o">*</span><span class="nx">TreeNode</span><span class="p">)</span> <span class="kt">bool</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="nx">root</span> <span class="o">==</span> <span class="kc">nil</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="kc">true</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="nf">abs</span><span class="p">(</span><span class="nf">getHeight</span><span class="p">(</span><span class="nx">root</span><span class="p">.</span><span class="nx">left</span><span class="p">)</span><span class="o">-</span><span class="nf">getHeight</span><span class="p">(</span><span class="nx">root</span><span class="p">.</span><span class="nx">right</span><span class="p">))</span> <span class="p">&gt;</span> <span class="mi">1</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="kc">false</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nf">isBalaned</span><span class="p">(</span><span class="nx">root</span><span class="p">.</span><span class="nx">left</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="nf">isBalaned</span><span class="p">(</span><span class="nx">root</span><span class="p">.</span><span class="nx">right</span><span class="p">)</span>
 <span class="p">}</span></code></pre></td></tr></table>
 </div>
 </div>
-<p>时间复杂度：O(n),n代表节点，每一个节点都要遍历一遍。
-空间复杂度：O(n),最坏的情况下，队列当中装满了一层的节点。</p>
-
 <p>如有错误，欢迎指正和讨论。</p>
 
     </div>
@@ -537,7 +615,7 @@ if (!doNotTrack) {
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-      2020-06-22
+      2020-06-28
       
     </span>
   </p>
@@ -561,22 +639,9 @@ if (!doNotTrack) {
       
       <nav class="post-nav">
         
-          <a class="prev" href="/post/golang/golang-interview-questions-is-balance-tree/">
-            
-            <i class="iconfont">
-              <svg  class="icon" viewBox="0 0 1024 1024" version="1.1"
-  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-  width="18" height="18">
-  <path d="M691.908486 949.511495l75.369571-89.491197c10.963703-12.998035 10.285251-32.864502-1.499144-44.378743L479.499795 515.267417 757.434875 204.940602c11.338233-12.190647 11.035334-32.285311-0.638543-44.850487l-80.46666-86.564541c-11.680017-12.583596-30.356378-12.893658-41.662889-0.716314L257.233596 494.235404c-11.332093 12.183484-11.041474 32.266891 0.657986 44.844348l80.46666 86.564541c1.772366 1.910513 3.706415 3.533476 5.750981 4.877077l306.620399 321.703933C662.505829 963.726242 680.945807 962.528973 691.908486 949.511495z"></path>
-</svg>
-
-            </i>
-            <span class="prev-text nav-default">Golang面试题：是否是平衡的二叉树</span>
-            <span class="prev-text nav-mobile">上一篇</span>
-          </a>
         
-          <a class="next" href="/post/golang/golang-output-log-to-file-and-console/">
-            <span class="next-text nav-default">Golang将日志同时输出到控制台和文件</span>
+          <a class="next" href="/post/golang/golang-interview-questions-binarry-tree-max-depth/">
+            <span class="next-text nav-default">Golang面试题：二叉树的最大深度</span>
             <span class="prev-text nav-mobile">下一篇</span>
             
             <i class="iconfont">
@@ -613,7 +678,7 @@ if (!doNotTrack) {
   <div id="disqus_thread"></div>
   <script type="text/javascript">
     var disqus_config = function () {
-      this.page.url = "https://ppmoon.github.io/post/golang/golang-interview-questions-binarry-tree-max-depth/";
+      this.page.url = "https://ppmoon.github.io/post/golang/golang-interview-questions-is-balance-tree/";
     };
     function load_disqus() {
       
