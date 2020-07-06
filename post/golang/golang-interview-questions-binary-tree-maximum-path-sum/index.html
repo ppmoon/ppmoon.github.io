@@ -10,7 +10,7 @@
       enable_page_level_ads: true
     });
   </script>
-  <title>Golang面试题：是否是平衡的二叉树 - PPmoon&#39;s Blog</title>
+  <title>Golang面试题：给定一个非空二叉树，返回其最大路径和 - PPmoon&#39;s Blog</title>
   
 
 <meta name="renderer" content="webkit" />
@@ -30,7 +30,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="ppmoon" />
-  <meta name="description" content="问题：给定一个二叉树，判断其是否是高度平衡的二叉树 高度平衡的二叉树定义：一颗二叉树，每一个节点的左右子树的高度差的绝对值不超过1。 示例 1: 给定" />
+  <meta name="description" content="问题：给定一个非空二叉树，返回其最大路径和 示例1： 1 2 3 4 5 6 7 输入: [1,2,3] 1 / \ 2 3 输出: 6 2&#43;1&#43;3 = 6 示例2： 1 2 3 4 5 6 7 8 9 输入: [-10,9,20,null,null,15,7] -10 / \ 9 20" />
 
   <meta name="keywords" content="ppmoon, golang, 技术分享" />
 
@@ -42,7 +42,7 @@
 <meta name="generator" content="Hugo 0.54.0" />
 
 
-<link rel="canonical" href="https://ppmoon.github.io/post/golang/golang-interview-questions-is-balance-tree/" />
+<link rel="canonical" href="https://ppmoon.github.io/post/golang/golang-interview-questions-binary-tree-maximum-path-sum/" />
 
 
 
@@ -64,27 +64,27 @@
 
 
 
-<meta property="og:title" content="Golang面试题：是否是平衡的二叉树" />
-<meta property="og:description" content="问题：给定一个二叉树，判断其是否是高度平衡的二叉树 高度平衡的二叉树定义：一颗二叉树，每一个节点的左右子树的高度差的绝对值不超过1。 示例 1: 给定" />
+<meta property="og:title" content="Golang面试题：给定一个非空二叉树，返回其最大路径和" />
+<meta property="og:description" content="问题：给定一个非空二叉树，返回其最大路径和 示例1： 1 2 3 4 5 6 7 输入: [1,2,3] 1 / \ 2 3 输出: 6 2&#43;1&#43;3 = 6 示例2： 1 2 3 4 5 6 7 8 9 输入: [-10,9,20,null,null,15,7] -10 / \ 9 20" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://ppmoon.github.io/post/golang/golang-interview-questions-is-balance-tree/" />
-<meta property="article:published_time" content="2020-06-28T00:00:00&#43;08:00"/>
-<meta property="article:modified_time" content="2020-06-28T00:00:00&#43;08:00"/>
+<meta property="og:url" content="https://ppmoon.github.io/post/golang/golang-interview-questions-binary-tree-maximum-path-sum/" />
+<meta property="article:published_time" content="2020-07-06T00:00:00&#43;08:00"/>
+<meta property="article:modified_time" content="2020-07-06T00:00:00&#43;08:00"/>
 
-<meta itemprop="name" content="Golang面试题：是否是平衡的二叉树">
-<meta itemprop="description" content="问题：给定一个二叉树，判断其是否是高度平衡的二叉树 高度平衡的二叉树定义：一颗二叉树，每一个节点的左右子树的高度差的绝对值不超过1。 示例 1: 给定">
+<meta itemprop="name" content="Golang面试题：给定一个非空二叉树，返回其最大路径和">
+<meta itemprop="description" content="问题：给定一个非空二叉树，返回其最大路径和 示例1： 1 2 3 4 5 6 7 输入: [1,2,3] 1 / \ 2 3 输出: 6 2&#43;1&#43;3 = 6 示例2： 1 2 3 4 5 6 7 8 9 输入: [-10,9,20,null,null,15,7] -10 / \ 9 20">
 
 
-<meta itemprop="datePublished" content="2020-06-28T00:00:00&#43;08:00" />
-<meta itemprop="dateModified" content="2020-06-28T00:00:00&#43;08:00" />
-<meta itemprop="wordCount" content="652">
+<meta itemprop="datePublished" content="2020-07-06T00:00:00&#43;08:00" />
+<meta itemprop="dateModified" content="2020-07-06T00:00:00&#43;08:00" />
+<meta itemprop="wordCount" content="1035">
 
 
 
 <meta itemprop="keywords" content="golang," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Golang面试题：是否是平衡的二叉树"/>
-<meta name="twitter:description" content="问题：给定一个二叉树，判断其是否是高度平衡的二叉树 高度平衡的二叉树定义：一颗二叉树，每一个节点的左右子树的高度差的绝对值不超过1。 示例 1: 给定"/>
+<meta name="twitter:title" content="Golang面试题：给定一个非空二叉树，返回其最大路径和"/>
+<meta name="twitter:description" content="问题：给定一个非空二叉树，返回其最大路径和 示例1： 1 2 3 4 5 6 7 输入: [1,2,3] 1 / \ 2 3 输出: 6 2&#43;1&#43;3 = 6 示例2： 1 2 3 4 5 6 7 8 9 输入: [-10,9,20,null,null,15,7] -10 / \ 9 20"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -330,11 +330,11 @@ if (!doNotTrack) {
           <article class="post bg-white">
     
     <header class="post-header">
-      <h1 class="post-title">Golang面试题：是否是平衡的二叉树</h1>
+      <h1 class="post-title">Golang面试题：给定一个非空二叉树，返回其最大路径和</h1>
       
       <div class="post-meta">
-        <time datetime="2020-06-28" class="post-time">
-          2020-06-28
+        <time datetime="2020-07-06" class="post-time">
+          2020-07-06
         </time>
         
         
@@ -354,14 +354,17 @@ if (!doNotTrack) {
   <div class="post-toc-content">
     <nav id="TableOfContents">
 <ul>
-<li><a href="#问题-给定一个二叉树-判断其是否是高度平衡的二叉树">问题：给定一个二叉树，判断其是否是高度平衡的二叉树</a></li>
-<li><a href="#解题思路">解题思路：</a>
+<li><a href="#问题-给定一个非空二叉树-返回其最大路径和">问题：给定一个非空二叉树，返回其最大路径和</a></li>
+<li><a href="#解题思路">解题思路</a>
 <ul>
-<li><a href="#树节点的结构体">树节点的结构体</a></li>
-<li><a href="#判断大小和求绝对值的函数准备">判断大小和求绝对值的函数准备</a></li>
-<li><a href="#如何获取节点高度">如何获取节点高度？</a></li>
-<li><a href="#如何判断是否是高度平衡二叉树">如何判断是否是高度平衡二叉树</a></li>
+<li><a href="#代码实现">代码实现</a>
+<ul>
+<li><a href="#二叉树的数据结构">二叉树的数据结构</a></li>
+<li><a href="#maxsum变量">maxSum变量</a></li>
+<li><a href="#maxgain函数">maxGain函数</a></li>
+<li><a href="#比较函数">比较函数</a></li>
 <li><a href="#完整代码">完整代码</a></li>
+</ul></li>
 </ul></li>
 </ul>
 </nav>
@@ -372,34 +375,9 @@ if (!doNotTrack) {
     <div class="post-content">
       
 
-<h1 id="问题-给定一个二叉树-判断其是否是高度平衡的二叉树">问题：给定一个二叉树，判断其是否是高度平衡的二叉树</h1>
+<h1 id="问题-给定一个非空二叉树-返回其最大路径和">问题：给定一个非空二叉树，返回其最大路径和</h1>
 
-<p>高度平衡的二叉树定义：一颗二叉树，每一个节点的左右子树的高度差的绝对值不超过1。</p>
-
-<p>示例 1:</p>
-
-<p>给定二叉树 [3,9,20,null,null,15,7]</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">    3
-   / \
-  9  20
-    /  \
-   15   7</pre></td></tr></table>
-</div>
-</div>
-<p>返回 true</p>
-
-<p>示例 2:</p>
-
-<p>给定二叉树 [1,2,2,3,3,null,null,4,4]</p>
+<p>示例1：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt">1
@@ -411,24 +389,65 @@ if (!doNotTrack) {
 </span><span class="lnt">7
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">       1
+<pre class="chroma">输入: [1,2,3]
+
+       1
       / \
-     2   2
-    / \
-   3   3
-  / \
- 4   4</pre></td></tr></table>
+     2   3
+
+输出: 6</pre></td></tr></table>
 </div>
 </div>
-<p>返回 false</p>
+<p>2+1+3 = 6</p>
 
-<h1 id="解题思路">解题思路：</h1>
+<p>示例2：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">输入: [-10,9,20,null,null,15,7]
 
-<p>在理解题意以后，我们需要先分解下问题。首先要先获取节点高度，然后再再进行比对判断，判断每一个节点左右子树的高度差的绝对值是否超过1。</p>
+   -10
+   / \
+  9  20
+    /  \
+   15   7
 
-<p>我们需要了解如何遍历二叉树，这样才能知道树的高度。还要了解递归的思想可以让代码逻辑更加清晰。</p>
+输出: 42</pre></td></tr></table>
+</div>
+</div>
+<p>15+20+7 = 42</p>
 
-<h2 id="树节点的结构体">树节点的结构体</h2>
+<h1 id="解题思路">解题思路</h1>
+
+<p>这道题主要难在理解题意，什么是最大路径和？</p>
+
+<p>路径：就是从一个节点a到达另外一个节点b的这个 a,b的序列</p>
+
+<p>路径和：就是路径序列a,b节点上的值的和</p>
+
+<p>根据题意最大路径和，意味着我们要找一条路径，这条路径要比其他路径的和的值都大。</p>
+
+<p>由此我们想到了如下信息：</p>
+
+<p>1.遍历二叉树的节点，我们可以使用递归的方法遍历节点，获取某一个分支的路径和。</p>
+
+<p>2.路径有很多，路径和的值就会很多，因为只需要最大路径和。所以我们需要一个maxSum变量用来存最大值。</p>
+
+<p>3.路径是从某一个结点出发的，我们需要一个函数maxGain来计算某一个节点以及其左或者右子树的最大路径和，通过比较确定最大值。</p>
+
+<h2 id="代码实现">代码实现</h2>
+
+<h3 id="二叉树的数据结构">二叉树的数据结构</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-golang" data-lang="golang"><span class="lnt">1
@@ -439,13 +458,28 @@ if (!doNotTrack) {
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-golang" data-lang="golang"><span class="kd">type</span> <span class="nx">TreeNode</span> <span class="kd">struct</span> <span class="p">{</span>
-    <span class="nx">left</span> <span class="o">*</span><span class="nx">TreeNode</span>
-    <span class="nx">right</span> <span class="o">*</span><span class="nx">TreeNode</span>
-    <span class="nx">value</span> <span class="kt">int</span>
+	<span class="nx">left</span> <span class="o">*</span><span class="nx">TreeNode</span>
+	<span class="nx">right</span> <span class="o">*</span><span class="nx">TreeNode</span>
+	<span class="nx">value</span> <span class="kt">int</span>
 <span class="p">}</span></code></pre></td></tr></table>
 </div>
 </div>
-<h2 id="判断大小和求绝对值的函数准备">判断大小和求绝对值的函数准备</h2>
+<h3 id="maxsum变量">maxSum变量</h3>
+
+<p>我们可以设置一个最大路径和的全局变量</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-golang" data-lang="golang"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-golang" data-lang="golang"><span class="kd">var</span> <span class="nx">maxSum</span> <span class="p">=</span> <span class="nx">math</span><span class="p">.</span><span class="nx">MinInt32</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>这里设置了一个int32最小的证书。主要是因为二叉树当中会有负数存在。所以以一个最小的整数作为比较值而不是用0来初始化这个变量。</p>
+
+<h3 id="maxgain函数">maxGain函数</h3>
+
+<p>这个函数求某一个节点以及其左或者右子树的最大路径和</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-golang" data-lang="golang"><span class="lnt"> 1
@@ -460,25 +494,27 @@ if (!doNotTrack) {
 </span><span class="lnt">10
 </span><span class="lnt">11
 </span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-golang" data-lang="golang"><span class="kd">func</span> <span class="nf">max</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span> <span class="kt">int</span><span class="p">)</span> <span class="kt">int</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="nx">a</span> <span class="p">&gt;</span> <span class="nx">b</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="nx">a</span>
+<pre class="chroma"><code class="language-golang" data-lang="golang"><span class="kd">func</span> <span class="nf">maxGain</span><span class="p">(</span><span class="nx">node</span> <span class="o">*</span><span class="nx">TreeNode</span><span class="p">)</span> <span class="kt">int</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="nx">node</span> <span class="o">==</span> <span class="kc">nil</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="mi">0</span>
     <span class="p">}</span>
-    <span class="k">return</span> <span class="nx">b</span>
-<span class="p">}</span>
-<span class="kd">func</span> <span class="nf">abs</span><span class="p">(</span><span class="nx">a</span> <span class="kt">int</span><span class="p">)</span> <span class="kt">int</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="nx">a</span> <span class="o">&gt;=</span><span class="mi">0</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="nx">a</span>
-    <span class="p">}</span>
-    <span class="k">return</span> <span class="o">-</span><span class="nx">a</span>
+    <span class="c1">// 如果这个节点的和小于0，肯定不是最大的了。就放弃了。但是要注意如果题型发生变化，在某些情况下，节点都是负数那我们应该如何处理？。
+</span><span class="c1"></span>    <span class="nx">leftGain</span> <span class="o">:=</span> <span class="nf">max</span><span class="p">(</span><span class="nf">maxGain</span><span class="p">(</span><span class="nx">node</span><span class="p">.</span><span class="nx">left</span><span class="p">),</span><span class="mi">0</span><span class="p">)</span>
+    <span class="nx">rightGain</span> <span class="o">:=</span> <span class="nf">max</span><span class="p">(</span><span class="nf">maxGain</span><span class="p">(</span><span class="nx">node</span><span class="p">.</span><span class="nx">right</span><span class="p">),</span><span class="mi">0</span><span class="p">)</span>
+    <span class="c1">// 节点的最大路径和是该节点的值和左右子树的值的和
+</span><span class="c1"></span>    <span class="nx">maxNodePathSum</span> <span class="o">:=</span> <span class="nx">node</span><span class="p">.</span><span class="nx">value</span> <span class="o">+</span> <span class="nx">leftGain</span> <span class="o">+</span> <span class="nx">rightGain</span>
+    <span class="c1">// 判断下这个节点是不是最大的
+</span><span class="c1"></span>    <span class="nx">maxSum</span> <span class="p">=</span> <span class="nf">max</span><span class="p">(</span><span class="nx">maxSum</span><span class="p">,</span><span class="nx">maxNodePathSum</span><span class="p">)</span>
+    <span class="c1">// 要把节点的以及其左或者右子树的最大路径和返回，递归用
+</span><span class="c1"></span>    <span class="k">return</span> <span class="nx">node</span><span class="p">.</span><span class="nx">value</span> <span class="o">+</span> <span class="nf">max</span><span class="p">(</span><span class="nx">leftGain</span><span class="p">,</span><span class="nx">rightGain</span><span class="p">)</span>
 <span class="p">}</span></code></pre></td></tr></table>
 </div>
 </div>
-<h2 id="如何获取节点高度">如何获取节点高度？</h2>
-
-<p>利用深度遍历递归的去获取节点高度。利用递归不停向下寻找到节点为空的位置计算高度。</p>
+<h3 id="比较函数">比较函数</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-golang" data-lang="golang"><span class="lnt">1
@@ -489,46 +525,15 @@ if (!doNotTrack) {
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-golang" data-lang="golang"><span class="kd">func</span> <span class="nf">getHeight</span><span class="p">(</span><span class="nx">root</span> <span class="o">*</span><span class="nx">TreeNode</span><span class="p">)</span> <span class="kt">int</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="nx">root</span> <span class="o">==</span> <span class="kc">nil</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="mi">0</span>
+<pre class="chroma"><code class="language-golang" data-lang="golang"><span class="kd">func</span> <span class="nf">max</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span> <span class="kt">int</span><span class="p">)</span> <span class="kt">int</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="nx">a</span> <span class="p">&gt;</span> <span class="nx">b</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">a</span>
     <span class="p">}</span>
-    <span class="k">return</span> <span class="mi">1</span> <span class="o">+</span> <span class="nf">max</span><span class="p">(</span><span class="nf">getHeight</span><span class="p">(</span><span class="nx">root</span><span class="p">.</span><span class="nx">left</span><span class="p">),</span><span class="nf">getHeight</span><span class="p">(</span><span class="nx">root</span><span class="p">.</span><span class="nx">right</span><span class="p">))</span>
+    <span class="k">return</span> <span class="nx">b</span>
 <span class="p">}</span></code></pre></td></tr></table>
 </div>
 </div>
-<h2 id="如何判断是否是高度平衡二叉树">如何判断是否是高度平衡二叉树</h2>
-
-<p>通过递归的方式判断每一个节点二叉树的高度的绝对值是否大于1</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-golang" data-lang="golang"><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-golang" data-lang="golang"><span class="kd">func</span> <span class="nf">isBalanced</span><span class="p">(</span><span class="nx">root</span> <span class="o">*</span><span class="nx">TreeNode</span><span class="p">)</span> <span class="kt">bool</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="nx">root</span> <span class="o">==</span> <span class="kc">nil</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="kc">true</span>
-    <span class="p">}</span>
-    <span class="c1">// 判断当前节点是否满足，不满足后面就不用看了。
-</span><span class="c1"></span>    <span class="k">if</span> <span class="nf">abs</span><span class="p">(</span><span class="nf">getHeight</span><span class="p">(</span><span class="nx">root</span><span class="p">.</span><span class="nx">left</span><span class="p">)</span><span class="o">-</span><span class="nf">getHeight</span><span class="p">(</span><span class="nx">root</span><span class="p">.</span><span class="nx">right</span><span class="p">))</span> <span class="p">&gt;</span> <span class="mi">1</span><span class="p">{</span>
-        <span class="k">return</span> <span class="kc">false</span>
-    <span class="p">}</span>
-    <span class="c1">// 如果满足条件继续向下递归，并返回结果。
-</span><span class="c1"></span>    <span class="k">return</span> <span class="nf">isBalanced</span><span class="p">(</span><span class="nx">root</span><span class="p">.</span><span class="nx">left</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="nf">isBalanced</span><span class="p">(</span><span class="nx">root</span><span class="p">.</span><span class="nx">right</span><span class="p">)</span>
-<span class="p">}</span></code></pre></td></tr></table>
-</div>
-</div>
-<h2 id="完整代码">完整代码</h2>
+<h3 id="完整代码">完整代码</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-golang" data-lang="golang"><span class="lnt"> 1
@@ -556,51 +561,37 @@ if (!doNotTrack) {
 </span><span class="lnt">23
 </span><span class="lnt">24
 </span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span><span class="lnt">33
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-golang" data-lang="golang"><span class="kd">type</span> <span class="nx">TreeNode</span> <span class="kd">struct</span> <span class="p">{</span>
-    <span class="nx">left</span> <span class="o">*</span><span class="nx">TreeNode</span>
-    <span class="nx">right</span> <span class="o">*</span><span class="nx">TreeNode</span>
-    <span class="nx">value</span> <span class="kt">int</span>
+	<span class="nx">left</span> <span class="o">*</span><span class="nx">TreeNode</span>
+	<span class="nx">right</span> <span class="o">*</span><span class="nx">TreeNode</span>
+	<span class="nx">value</span> <span class="kt">int</span>
 <span class="p">}</span>
-
-<span class="kd">func</span> <span class="nf">max</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span> <span class="kt">int</span><span class="p">)</span> <span class="kt">int</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="nx">a</span> <span class="p">&gt;</span> <span class="nx">b</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="nx">a</span>
-    <span class="p">}</span>
-    <span class="k">return</span> <span class="nx">b</span>
-<span class="p">}</span>
-<span class="kd">func</span> <span class="nf">abs</span><span class="p">(</span><span class="nx">a</span> <span class="kt">int</span><span class="p">)</span> <span class="kt">int</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="nx">a</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="nx">a</span>
-    <span class="p">}</span>
-    <span class="k">return</span> <span class="o">-</span><span class="nx">a</span>
-<span class="p">}</span>
-<span class="kd">func</span> <span class="nf">getHeight</span><span class="p">(</span><span class="nx">root</span> <span class="o">*</span><span class="nx">TreeNode</span><span class="p">)</span> <span class="kt">int</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="nx">root</span> <span class="o">==</span> <span class="kc">nil</span> <span class="p">{</span>
+<span class="kd">var</span> <span class="nx">maxSum</span> <span class="p">=</span> <span class="nx">math</span><span class="p">.</span><span class="nx">MinInt32</span>
+<span class="kd">func</span> <span class="nf">maxGain</span><span class="p">(</span><span class="nx">node</span> <span class="o">*</span><span class="nx">TreeNode</span><span class="p">)</span> <span class="kt">int</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="nx">node</span> <span class="o">==</span> <span class="kc">nil</span> <span class="p">{</span>
         <span class="k">return</span> <span class="mi">0</span>
     <span class="p">}</span>
-    <span class="k">return</span> <span class="mi">1</span> <span class="o">+</span> <span class="nf">max</span><span class="p">(</span><span class="nf">getHeight</span><span class="p">(</span><span class="nx">root</span><span class="p">.</span><span class="nx">left</span><span class="p">),</span><span class="nf">getHeight</span><span class="p">(</span><span class="nx">root</span><span class="p">.</span><span class="nx">right</span><span class="p">))</span>
+    <span class="c1">// 如果这个节点的和小于0，肯定不是最大的了。就放弃了。但是要注意如果题型发生变化，在某些情况下，节点都是负数那我们应该如何处理？。
+</span><span class="c1"></span>    <span class="nx">leftGain</span> <span class="o">:=</span> <span class="nf">max</span><span class="p">(</span><span class="nf">maxGain</span><span class="p">(</span><span class="nx">node</span><span class="p">.</span><span class="nx">left</span><span class="p">),</span><span class="mi">0</span><span class="p">)</span>
+    <span class="nx">rightGain</span> <span class="o">:=</span> <span class="nf">max</span><span class="p">(</span><span class="nf">maxGain</span><span class="p">(</span><span class="nx">node</span><span class="p">.</span><span class="nx">right</span><span class="p">),</span><span class="mi">0</span><span class="p">)</span>
+    <span class="c1">// 节点的最大路径和是该节点的值和左右子树的值的和
+</span><span class="c1"></span>    <span class="nx">maxNodePathSum</span> <span class="o">:=</span> <span class="nx">node</span><span class="p">.</span><span class="nx">value</span> <span class="o">+</span> <span class="nx">leftGain</span> <span class="o">+</span> <span class="nx">rightGain</span>
+    <span class="c1">// 判断下这个节点是不是最大的
+</span><span class="c1"></span>    <span class="nx">maxSum</span> <span class="p">=</span> <span class="nf">max</span><span class="p">(</span><span class="nx">maxSum</span><span class="p">,</span><span class="nx">maxNodePathSum</span><span class="p">)</span>
+    <span class="c1">// 要把节点的以及其左或者右子树的最大路径和返回，递归用
+</span><span class="c1"></span>    <span class="k">return</span> <span class="nx">node</span><span class="p">.</span><span class="nx">value</span> <span class="o">+</span> <span class="nf">max</span><span class="p">(</span><span class="nx">leftGain</span><span class="p">,</span><span class="nx">rightGain</span><span class="p">)</span>
 <span class="p">}</span>
-<span class="kd">func</span> <span class="nf">isBalanced</span><span class="p">(</span><span class="nx">root</span> <span class="o">*</span><span class="nx">TreeNode</span><span class="p">)</span> <span class="kt">bool</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="nx">root</span> <span class="o">==</span> <span class="kc">nil</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="kc">true</span>
-    <span class="p">}</span>
-    <span class="k">if</span> <span class="nf">abs</span><span class="p">(</span><span class="nf">getHeight</span><span class="p">(</span><span class="nx">root</span><span class="p">.</span><span class="nx">left</span><span class="p">)</span><span class="o">-</span><span class="nf">getHeight</span><span class="p">(</span><span class="nx">root</span><span class="p">.</span><span class="nx">right</span><span class="p">))</span> <span class="p">&gt;</span> <span class="mi">1</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="kc">false</span>
-    <span class="p">}</span>
-    <span class="k">return</span> <span class="nf">isBalaned</span><span class="p">(</span><span class="nx">root</span><span class="p">.</span><span class="nx">left</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="nf">isBalaned</span><span class="p">(</span><span class="nx">root</span><span class="p">.</span><span class="nx">right</span><span class="p">)</span>
+<span class="kd">func</span> <span class="nf">maxPathSum</span><span class="p">(</span><span class="nx">root</span> <span class="o">*</span><span class="nx">TreeNode</span><span class="p">)</span> <span class="kt">int</span> <span class="p">{</span>
+    <span class="c1">// 从跟节点开始
+</span><span class="c1"></span>    <span class="nf">maxGain</span><span class="p">(</span><span class="nx">root</span><span class="p">)</span>
+	<span class="k">return</span> <span class="nx">maxSum</span>
 <span class="p">}</span></code></pre></td></tr></table>
 </div>
 </div>
+<p>以上代码使用了maxSum作为全局变量，在一般答题网站上跑多个测试用例会有问题。可以利用匿名函数的方式把maxGain函数放到maxPathSum当中。</p>
+
 <p>如有错误，欢迎指正和讨论。</p>
 
     </div>
@@ -615,7 +606,7 @@ if (!doNotTrack) {
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-      2020-06-28
+      2020-07-06
       
     </span>
   </p>
@@ -639,22 +630,9 @@ if (!doNotTrack) {
       
       <nav class="post-nav">
         
-          <a class="prev" href="/post/golang/golang-interview-questions-binary-tree-maximum-path-sum/">
-            
-            <i class="iconfont">
-              <svg  class="icon" viewBox="0 0 1024 1024" version="1.1"
-  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-  width="18" height="18">
-  <path d="M691.908486 949.511495l75.369571-89.491197c10.963703-12.998035 10.285251-32.864502-1.499144-44.378743L479.499795 515.267417 757.434875 204.940602c11.338233-12.190647 11.035334-32.285311-0.638543-44.850487l-80.46666-86.564541c-11.680017-12.583596-30.356378-12.893658-41.662889-0.716314L257.233596 494.235404c-11.332093 12.183484-11.041474 32.266891 0.657986 44.844348l80.46666 86.564541c1.772366 1.910513 3.706415 3.533476 5.750981 4.877077l306.620399 321.703933C662.505829 963.726242 680.945807 962.528973 691.908486 949.511495z"></path>
-</svg>
-
-            </i>
-            <span class="prev-text nav-default">Golang面试题：给定一个非空二叉树，返回其最大路径和</span>
-            <span class="prev-text nav-mobile">上一篇</span>
-          </a>
         
-          <a class="next" href="/post/golang/golang-interview-questions-binarry-tree-max-depth/">
-            <span class="next-text nav-default">Golang面试题：二叉树的最大深度</span>
+          <a class="next" href="/post/golang/golang-interview-questions-is-balance-tree/">
+            <span class="next-text nav-default">Golang面试题：是否是平衡的二叉树</span>
             <span class="prev-text nav-mobile">下一篇</span>
             
             <i class="iconfont">
@@ -691,7 +669,7 @@ if (!doNotTrack) {
   <div id="disqus_thread"></div>
   <script type="text/javascript">
     var disqus_config = function () {
-      this.page.url = "https://ppmoon.github.io/post/golang/golang-interview-questions-is-balance-tree/";
+      this.page.url = "https://ppmoon.github.io/post/golang/golang-interview-questions-binary-tree-maximum-path-sum/";
     };
     function load_disqus() {
       

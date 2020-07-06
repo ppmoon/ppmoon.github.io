@@ -10,6 +10,13 @@
   </url>
   
   <url>
+    <loc>https://ppmoon.github.io/post/golang/golang-interview-questions-binary-tree-maximum-path-sum/</loc>
+    <lastmod>2020-07-06T00:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://ppmoon.github.io/post/golang/golang-interview-questions-is-balance-tree/</loc>
     <lastmod>2020-06-28T00:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -143,7 +150,7 @@
   
   <url>
     <loc>https://ppmoon.github.io/tags/golang/</loc>
-    <lastmod>2020-06-28T00:00:00+08:00</lastmod>
+    <lastmod>2020-07-06T00:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -171,7 +178,7 @@
   
   <url>
     <loc>https://ppmoon.github.io/post/</loc>
-    <lastmod>2020-06-28T00:00:00+08:00</lastmod>
+    <lastmod>2020-07-06T00:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -185,7 +192,7 @@
   
   <url>
     <loc>https://ppmoon.github.io/tags/</loc>
-    <lastmod>2020-06-28T00:00:00+08:00</lastmod>
+    <lastmod>2020-07-06T00:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
