@@ -39,7 +39,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.54.0" />
+<meta name="generator" content="Hugo 0.79.0" />
 
 
 <link rel="canonical" href="https://ppmoon.github.io/post/golang/how-to-download-golang-org-package/" />
@@ -68,15 +68,12 @@
 <meta property="og:description" content="如何下载golang.org的包？ 由于墙的原因，golang.org这个域名下的资源是无法访问的。我们无法下载golang.org上面的包，" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://ppmoon.github.io/post/golang/how-to-download-golang-org-package/" />
-<meta property="article:published_time" content="2018-04-25T12:14:01&#43;08:00"/>
-<meta property="article:modified_time" content="2018-04-25T12:14:01&#43;08:00"/>
-
+<meta property="article:published_time" content="2018-04-25T12:14:01+08:00" />
+<meta property="article:modified_time" content="2018-04-25T12:14:01+08:00" />
 <meta itemprop="name" content="国内go如何下载golang-org的包">
 <meta itemprop="description" content="如何下载golang.org的包？ 由于墙的原因，golang.org这个域名下的资源是无法访问的。我们无法下载golang.org上面的包，">
-
-
-<meta itemprop="datePublished" content="2018-04-25T12:14:01&#43;08:00" />
-<meta itemprop="dateModified" content="2018-04-25T12:14:01&#43;08:00" />
+<meta itemprop="datePublished" content="2018-04-25T12:14:01+08:00" />
+<meta itemprop="dateModified" content="2018-04-25T12:14:01+08:00" />
 <meta itemprop="wordCount" content="975">
 
 
@@ -353,79 +350,63 @@ if (!doNotTrack) {
   <h2 class="post-toc-title">文章目录</h2>
   <div class="post-toc-content">
     <nav id="TableOfContents">
-<ul>
-<li><a href="#如何下载golang-org的包">如何下载golang.org的包？</a></li>
-<li><a href="#解决方案">解决方案</a>
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#以下载grpc为例">以下载grpc为例</a></li>
-</ul></li>
-</ul></li>
-</ul></li>
-<li><a href="#注意">注意</a></li>
-</ul>
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
   </div>
 </div>
 
     
     <div class="post-content">
-      
-
-<h1 id="如何下载golang-org的包">如何下载golang.org的包？</h1>
-
+      <h1 id="如何下载golangorg的包">如何下载golang.org的包？</h1>
 <p>由于墙的原因，golang.org这个域名下的资源是无法访问的。我们无法下载golang.org上面的包，好在golang的包都管理在github所以我们可以访问github来下载golang.org的包。</p>
-
 <h1 id="解决方案">解决方案</h1>
-
 <p>下载github上的包并替换到golang.org的目录里。
-<img src="https://upload-images.jianshu.io/upload_images/677473-3391c5bcbfb736dc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="GOPATH" />
+<img src="https://upload-images.jianshu.io/upload_images/677473-3391c5bcbfb736dc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="GOPATH">
 GOPATH的目录是这样的。我们通过go get下载的包会
-<img src="https://upload-images.jianshu.io/upload_images/677473-812d837f0a0c16ac.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="GOPATH" />
+<img src="https://upload-images.jianshu.io/upload_images/677473-812d837f0a0c16ac.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="GOPATH">
 其中google.golang.org和golang.org在国内是无法直接使用go get获取的。所以我们使用github的替代方案。</p>
-
 <h4 id="以下载grpc为例">以下载grpc为例</h4>
-
 <p>grpc官方提供的下载命令是：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">go get google.golang.org/grpc</pre></td></tr></table>
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">go get google.golang.org/grpc
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>因为无法访问，所以我们需要在<code>$GOPATH/src</code>目录下面创建一个<code>google.golang.org</code>的目录。
-在github上找到对应的grpc的包，<a href="https://github.com/grpc/grpc-go">https://github.com/grpc/grpc-go</a>
-其实google.golang.org对应的就是<a href="https://github.com/grpc/grpc-go">https://github.com/grpc/grpc-go</a>
+</div><p>因为无法访问，所以我们需要在<code>$GOPATH/src</code>目录下面创建一个<code>google.golang.org</code>的目录。
+在github上找到对应的grpc的包，https://github.com/grpc/grpc-go
+其实google.golang.org对应的就是https://github.com/grpc/grpc-go
 然后我们进入到<code>$GOPATH/src/google.golang.org</code>这个目录。执行git命令</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">git clone --depth=1 https://github.com/grpc/grpc-go.git grpc</pre></td></tr></table>
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">git clone --depth=1 https://github.com/grpc/grpc-go.git grpc
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>命令解析：
+</div><p>命令解析：
 其中&ndash;depth=1 这个参数的意思是只克隆最新的commit分支。不加也行。
 最后的grpc表示的是将克隆的文件存放到那个文件夹里面。
 执行完上面的命令，我们就成功的将grpc的包下载到本地了。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">go get google.golang.org/grpc</pre></td></tr></table>
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">go get google.golang.org/grpc
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>golang当中go get其实执行了两个操作，一个是git clone 另外一个go install。所以我们还要进入到<code>$GOPATH/src/google.golang.org/grpc</code>当中执行以下<code>go install</code> 。这个命令会在<code>$GOPATH/pkg/google.golang.org/grpc</code>下面生成一个grpc.a的外部包文件。用于和其他程序访问和编译。并且在<code>go install</code>的过程当中我们可以检查哪些相关依赖的包没有安装，可以使用相同的办法进行安装。</p>
-
+</div><p>golang当中go get其实执行了两个操作，一个是git clone 另外一个go install。所以我们还要进入到<code>$GOPATH/src/google.golang.org/grpc</code>当中执行以下<code>go install</code> 。这个命令会在<code>$GOPATH/pkg/google.golang.org/grpc</code>下面生成一个grpc.a的外部包文件。用于和其他程序访问和编译。并且在<code>go install</code>的过程当中我们可以检查哪些相关依赖的包没有安装，可以使用相同的办法进行安装。</p>
 <h1 id="注意">注意</h1>
-
 <p>为什么不能直接git clone到src目录里使用？其实这样也没问题的。但是会引来一个麻烦，就是go的import引入包是通过src下面的路径来引入的。引用第三方的包的时候可能还是会使用到golang.org目录下的包，这个时候你可能需要修改代码或者去迁移还是很麻烦。所以才有以上git clone 然后替换目录的办法。</p>
 
     </div>

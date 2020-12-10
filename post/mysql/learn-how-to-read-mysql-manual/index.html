@@ -39,7 +39,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.54.0" />
+<meta name="generator" content="Hugo 0.79.0" />
 
 
 <link rel="canonical" href="https://ppmoon.github.io/post/mysql/learn-how-to-read-mysql-manual/" />
@@ -68,15 +68,12 @@
 <meta property="og:description" content="mysql不同的版本会有不同的语法特性，如何才能知道当前版本的语法是什么样子的呢？最好的办法就是查看mysql的帮助手册。 查看mysql的手" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://ppmoon.github.io/post/mysql/learn-how-to-read-mysql-manual/" />
-<meta property="article:published_time" content="2019-03-20T19:44:01&#43;08:00"/>
-<meta property="article:modified_time" content="2019-03-20T19:44:01&#43;08:00"/>
-
+<meta property="article:published_time" content="2019-03-20T19:44:01+08:00" />
+<meta property="article:modified_time" content="2019-03-20T19:44:01+08:00" />
 <meta itemprop="name" content="学习如何使用mysql的手册">
 <meta itemprop="description" content="mysql不同的版本会有不同的语法特性，如何才能知道当前版本的语法是什么样子的呢？最好的办法就是查看mysql的帮助手册。 查看mysql的手">
-
-
-<meta itemprop="datePublished" content="2019-03-20T19:44:01&#43;08:00" />
-<meta itemprop="dateModified" content="2019-03-20T19:44:01&#43;08:00" />
+<meta itemprop="datePublished" content="2019-03-20T19:44:01+08:00" />
+<meta itemprop="dateModified" content="2019-03-20T19:44:01+08:00" />
 <meta itemprop="wordCount" content="377">
 
 
@@ -353,37 +350,31 @@ if (!doNotTrack) {
   <h2 class="post-toc-title">文章目录</h2>
   <div class="post-toc-content">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#思考">思考</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#思考">思考</a></li>
+  </ul>
 </nav>
   </div>
 </div>
 
     
     <div class="post-content">
-      
-
-<p>mysql不同的版本会有不同的语法特性，如何才能知道当前版本的语法是什么样子的呢？最好的办法就是查看mysql的帮助手册。</p>
-
+      <p>mysql不同的版本会有不同的语法特性，如何才能知道当前版本的语法是什么样子的呢？最好的办法就是查看mysql的帮助手册。</p>
 <p>查看mysql的手册只需要一个问号 + 关键词 就可以了：
 比如我要查看show命令的使用说明可以直接在mysql的控制台输入 ? show</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">mysql&gt; ? show</pre></td></tr></table>
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">mysql&gt; ? show
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>注意问号后面有空格。
+</div><p>注意问号后面有空格。
 就可以得到show命令的使用说明</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -398,9 +389,9 @@ if (!doNotTrack) {
 </span><span class="lnt">13
 </span><span class="lnt">14
 </span><span class="lnt">15
-</span></pre></td>
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">Name: &#39;SHOW&#39;
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">Name: &#39;SHOW&#39;
 Description:
 SHOW has many forms that provide information about databases, tables,
 columns, or status information about the server. This section describes
@@ -414,13 +405,11 @@ SHOW BINLOG EVENTS [IN &#39;log_name&#39;] [FROM pos] [LIMIT [offset,] row_count
 flexibility in specifying which rows to display. See
 http://dev.mysql.com/doc/refman/5.7/en/extended-show.html.
 
-URL: http://dev.mysql.com/doc/refman/5.7/en/show.html</pre></td></tr></table>
+URL: http://dev.mysql.com/doc/refman/5.7/en/show.html
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>同理我们可以输入 ? select ? int ? update 等等查看命令数据类型在当前版本的解释说明。这个小技巧在我们学习mysql和日常使用当中都会产生事半功倍的效果哦。</p>
-
+</div><p>同理我们可以输入 ? select ? int ? update 等等查看命令数据类型在当前版本的解释说明。这个小技巧在我们学习mysql和日常使用当中都会产生事半功倍的效果哦。</p>
 <h2 id="思考">思考</h2>
-
 <p>让我们思考一下 问号 + 命令 查看mysql手册这条命令的逻辑。
 问号 ？ 表示疑问，命令表示疑问的主体。? show 是不是颇有一种 what is show? 的感觉？这样看起来就更像是在更电脑提问了吧。</p>
 

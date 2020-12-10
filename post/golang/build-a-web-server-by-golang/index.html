@@ -39,7 +39,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.54.0" />
+<meta name="generator" content="Hugo 0.79.0" />
 
 
 <link rel="canonical" href="https://ppmoon.github.io/post/golang/build-a-web-server-by-golang/" />
@@ -68,15 +68,12 @@
 <meta property="og:description" content="Go是一款静态里语言，特点就是拥有极好的并发编程体验。下面是使用Go实现的一个并发，非阻塞的web服务器。 代码 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://ppmoon.github.io/post/golang/build-a-web-server-by-golang/" />
-<meta property="article:published_time" content="2017-04-19T01:27:01&#43;08:00"/>
-<meta property="article:modified_time" content="2017-04-19T01:27:01&#43;08:00"/>
-
+<meta property="article:published_time" content="2017-04-19T01:27:01+08:00" />
+<meta property="article:modified_time" content="2017-04-19T01:27:01+08:00" />
 <meta itemprop="name" content="Go编写一个简单的web服务器">
 <meta itemprop="description" content="Go是一款静态里语言，特点就是拥有极好的并发编程体验。下面是使用Go实现的一个并发，非阻塞的web服务器。 代码 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15">
-
-
-<meta itemprop="datePublished" content="2017-04-19T01:27:01&#43;08:00" />
-<meta itemprop="dateModified" content="2017-04-19T01:27:01&#43;08:00" />
+<meta itemprop="datePublished" content="2017-04-19T01:27:01+08:00" />
+<meta itemprop="dateModified" content="2017-04-19T01:27:01+08:00" />
 <meta itemprop="wordCount" content="748">
 
 
@@ -353,34 +350,26 @@ if (!doNotTrack) {
   <h2 class="post-toc-title">文章目录</h2>
   <div class="post-toc-content">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#代码">代码</a></li>
-<li><a href="#代码解析">代码解析</a></li>
-<li><a href="#关于并发">关于并发</a>
-<ul>
-<li>
-<ul>
-<li><a href="#listenandserve">ListenAndServe</a></li>
-</ul></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#代码">代码</a></li>
+    <li><a href="#代码解析">代码解析</a></li>
+    <li><a href="#关于并发">关于并发</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
   </div>
 </div>
 
     
     <div class="post-content">
-      
-
-<p>Go是一款静态里语言，特点就是拥有极好的并发编程体验。下面是使用Go实现的一个并发，非阻塞的web服务器。</p>
-
+      <p>Go是一款静态里语言，特点就是拥有极好的并发编程体验。下面是使用Go实现的一个并发，非阻塞的web服务器。</p>
 <h2 id="代码">代码</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-golang" data-lang="golang"><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -439,21 +428,17 @@ if (!doNotTrack) {
 </span><span class="c1"></span>	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
 		<span class="nx">log</span><span class="p">.</span><span class="nf">Fatal</span><span class="p">(</span><span class="s">&#34;ListenAndServe: &#34;</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
 	<span class="p">}</span>
-<span class="p">}</span></code></pre></td></tr></table>
+<span class="p">}</span>
+</code></pre></td></tr></table>
 </div>
-</div>
-<h2 id="代码解析">代码解析</h2>
-
+</div><h2 id="代码解析">代码解析</h2>
 <p><em>package main</em> 表示的是包名，需要在文件的第一行声明，package main这个包名表示go程序是一个可独立运行的程序，每一个go程序都应当有一个main为名称的包。
 <em>import</em> 导入需要使用到的类库，这里和python已经java都类似。其中fmt——Formatting包含了一些格式化的IO操作。
 <em>func sayhelloName</em> 在go当中，函数使用func声明，后面跟函数名，然后是参数，go当中声明一个变量的类型的时候会把类型写在后面比如<code>var a int</code>。sayhelloName这个函数，w的数据类型是http.ResponseWriter，用于响应http。r是一个http.Request指针，用于接受请求。
 <em>main</em> main()函数 其中http.HandleFunc用于处理路由，ListenAndServer用来监听请求。
 <em>log</em> log主要用来在命令行状态下输出日志</p>
-
 <h2 id="关于并发">关于并发</h2>
-
 <h4 id="listenandserve">ListenAndServe</h4>
-
 <p>这里创建web服务其实只是简单的使用了golang自带的http包的ListenAndServe()函数，即便是官方实现的包，在web服务领域当中也有不俗的表现，原因就在于ListenAndServe()函数当中在处理请求的时候给每一个连接创建了一个协程*go c.serve(ctx)*这样golang默认的http请求拥有更好的并发性能。</p>
 
     </div>

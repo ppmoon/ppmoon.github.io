@@ -39,7 +39,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.54.0" />
+<meta name="generator" content="Hugo 0.79.0" />
 
 
 <link rel="canonical" href="https://ppmoon.github.io/post/golang/golang-cross-compile/" />
@@ -68,16 +68,13 @@
 <meta property="og:description" content="golang交叉编译 问题 golang如何在一个平台编译另外一个平台可以执行的文件。比如在mac上编译Windows和linux可以执行的文件" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://ppmoon.github.io/post/golang/golang-cross-compile/" />
-<meta property="article:published_time" content="2018-02-16T14:44:01&#43;08:00"/>
-<meta property="article:modified_time" content="2018-02-16T14:44:01&#43;08:00"/>
-
+<meta property="article:published_time" content="2018-02-16T14:44:01+08:00" />
+<meta property="article:modified_time" content="2018-02-16T14:44:01+08:00" />
 <meta itemprop="name" content="go如何进行交叉编译">
 <meta itemprop="description" content="golang交叉编译 问题 golang如何在一个平台编译另外一个平台可以执行的文件。比如在mac上编译Windows和linux可以执行的文件">
-
-
-<meta itemprop="datePublished" content="2018-02-16T14:44:01&#43;08:00" />
-<meta itemprop="dateModified" content="2018-02-16T14:44:01&#43;08:00" />
-<meta itemprop="wordCount" content="711">
+<meta itemprop="datePublished" content="2018-02-16T14:44:01+08:00" />
+<meta itemprop="dateModified" content="2018-02-16T14:44:01+08:00" />
+<meta itemprop="wordCount" content="709">
 
 
 
@@ -353,43 +350,33 @@ if (!doNotTrack) {
   <h2 class="post-toc-title">文章目录</h2>
   <div class="post-toc-content">
     <nav id="TableOfContents">
-<ul>
-<li><a href="#golang交叉编译">golang交叉编译</a>
-<ul>
-<li><a href="#问题">问题</a></li>
-<li><a href="#解决方案">解决方案</a>
-<ul>
-<li><a href="#我们想要编译的文件hello-go">我们想要编译的文件hello.go</a></li>
-<li><a href="#在mac上编译64位linux的命令编译命令">在mac上编译64位linux的命令编译命令</a></li>
-<li><a href="#参数解析">参数解析</a></li>
-</ul></li>
-<li><a href="#扩展阅读">扩展阅读</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#问题">问题</a></li>
+    <li><a href="#解决方案">解决方案</a>
+      <ul>
+        <li><a href="#我们想要编译的文件hellogo">我们想要编译的文件hello.go</a></li>
+        <li><a href="#在mac上编译64位linux的命令编译命令">在mac上编译64位linux的命令编译命令</a></li>
+        <li><a href="#参数解析">参数解析</a></li>
+      </ul>
+    </li>
+    <li><a href="#扩展阅读">扩展阅读</a></li>
+  </ul>
 </nav>
   </div>
 </div>
 
     
     <div class="post-content">
-      
-
-<h1 id="golang交叉编译">golang交叉编译</h1>
-
+      <h1 id="golang交叉编译">golang交叉编译</h1>
 <h2 id="问题">问题</h2>
-
 <p>golang如何在一个平台编译另外一个平台可以执行的文件。比如在mac上编译Windows和linux可以执行的文件。那么我们的问题就设定成：如何在mac上编译64位linux的可执行文件。</p>
-
 <h2 id="解决方案">解决方案</h2>
-
 <p>golang的交叉编译要保证golang版本在1.5以上，本解决方案实例代码1.9版本执行的。</p>
-
-<h3 id="我们想要编译的文件hello-go">我们想要编译的文件hello.go</h3>
-
+<h3 id="我们想要编译的文件hellogo">我们想要编译的文件hello.go</h3>
 <p>hello.go</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-golang" data-lang="golang"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -404,28 +391,26 @@ if (!doNotTrack) {
 
 <span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
     <span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;hello, world\n&#34;</span><span class="p">)</span>
-<span class="p">}</span></code></pre></td></tr></table>
+<span class="p">}</span>
+</code></pre></td></tr></table>
 </div>
-</div>
-<h3 id="在mac上编译64位linux的命令编译命令">在mac上编译64位linux的命令编译命令</h3>
-
+</div><h3 id="在mac上编译64位linux的命令编译命令">在mac上编译64位linux的命令编译命令</h3>
 <p>bash:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nv">GOOS</span><span class="o">=</span>linux <span class="nv">GOARCH</span><span class="o">=</span>amd64 go build hello.go</code></pre></td></tr></table>
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nv">GOOS</span><span class="o">=</span>linux <span class="nv">GOARCH</span><span class="o">=</span>amd64 go build hello.go
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>上面这段代码直接在命令控制台里面运行就可以生成64位linux的可执行程序。</p>
-
+</div><p>上面这段代码直接在命令控制台里面运行就可以生成64位linux的可执行程序。</p>
 <h3 id="参数解析">参数解析</h3>
-
-<p>这里用到了两个变量：
--   GOOS：目标操作系统
--   GOARCH：目标操作系统的架构</p>
-
+<p>这里用到了两个变量：</p>
+<ul>
+<li>GOOS：目标操作系统</li>
+<li>GOARCH：目标操作系统的架构</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -434,26 +419,22 @@ if (!doNotTrack) {
 <th>OS version</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>linux</td>
 <td>386 / amd64 / arm</td>
 <td>&gt;= Linux 2.6</td>
 </tr>
-
 <tr>
 <td>darwin</td>
 <td>386 / amd64</td>
 <td>OS X (Snow Leopard + Lion)</td>
 </tr>
-
 <tr>
 <td>freebsd</td>
 <td>386 / amd64</td>
 <td>&gt;= FreeBSD 7</td>
 </tr>
-
 <tr>
 <td>windows</td>
 <td>386 / amd64</td>
@@ -461,24 +442,19 @@ if (!doNotTrack) {
 </tr>
 </tbody>
 </table>
-
 <p>编译其他平台的时候根据上面表格参数执行编译就可以了。</p>
-
 <h2 id="扩展阅读">扩展阅读</h2>
-
 <p>在网络上的诸多教程中可能会看到下面的编译命令</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nv">CGO_ENABLED</span><span class="o">=</span><span class="m">0</span> <span class="nv">GOOS</span><span class="o">=</span>linux <span class="nv">GOARCH</span><span class="o">=</span>amd64 go build hello.go</code></pre></td></tr></table>
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nv">CGO_ENABLED</span><span class="o">=</span><span class="m">0</span> <span class="nv">GOOS</span><span class="o">=</span>linux <span class="nv">GOARCH</span><span class="o">=</span>amd64 go build hello.go
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>其中CGO_ENABLED=0的意思是使用C语言版本的GO编译器，参数配置为0的时候就关闭C语言版本的编译器了。自从golang1.5以后go就使用go语言编译器进行编译了。在golang1.9当中没有使用CGO_ENABLED参数发现依然可以正常编译。当然使用了也可以正常编译。比如把CGO_ENABLED参数设置成1，即在编译的过程当中使用CGO编译器，我发现依然是可以正常编译的。</p>
-
+</div><p>其中CGO_ENABLED=0的意思是使用C语言版本的GO编译器，参数配置为0的时候就关闭C语言版本的编译器了。自从golang1.5以后go就使用go语言编译器进行编译了。在golang1.9当中没有使用CGO_ENABLED参数发现依然可以正常编译。当然使用了也可以正常编译。比如把CGO_ENABLED参数设置成1，即在编译的过程当中使用CGO编译器，我发现依然是可以正常编译的。</p>
 <p>实际上如果在go当中使用了C的库，比如<code>import &quot;C&quot;</code>默认使用go build的时候就会启动CGO编译器，当然我们可以使用CGO_ENABLED=0来控制go build是否使用CGO编译器。</p>
-
 <p>以上若有错误欢迎指正。</p>
 
     </div>

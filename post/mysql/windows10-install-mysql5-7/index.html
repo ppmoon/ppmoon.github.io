@@ -39,7 +39,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.54.0" />
+<meta name="generator" content="Hugo 0.79.0" />
 
 
 <link rel="canonical" href="https://ppmoon.github.io/post/mysql/windows10-install-mysql5-7/" />
@@ -68,15 +68,12 @@
 <meta property="og:description" content="1.首先在mysql的官方网站下载mysql community server 5.7 由于我的win10是64位的所以我选择64zip下载。 http://dev.mysql.com/downloads/mysql/ 不用注册直接点击No thanks,just start my downlload. 2.解" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://ppmoon.github.io/post/mysql/windows10-install-mysql5-7/" />
-<meta property="article:published_time" content="2016-01-27T17:30:54&#43;08:00"/>
-<meta property="article:modified_time" content="2016-01-27T17:30:54&#43;08:00"/>
-
+<meta property="article:published_time" content="2016-01-27T17:30:54+08:00" />
+<meta property="article:modified_time" content="2016-01-27T17:30:54+08:00" />
 <meta itemprop="name" content="windows10安装mysql5.7">
 <meta itemprop="description" content="1.首先在mysql的官方网站下载mysql community server 5.7 由于我的win10是64位的所以我选择64zip下载。 http://dev.mysql.com/downloads/mysql/ 不用注册直接点击No thanks,just start my downlload. 2.解">
-
-
-<meta itemprop="datePublished" content="2016-01-27T17:30:54&#43;08:00" />
-<meta itemprop="dateModified" content="2016-01-27T17:30:54&#43;08:00" />
+<meta itemprop="datePublished" content="2016-01-27T17:30:54+08:00" />
+<meta itemprop="dateModified" content="2016-01-27T17:30:54+08:00" />
 <meta itemprop="wordCount" content="538">
 
 
@@ -353,109 +350,66 @@ if (!doNotTrack) {
   <h2 class="post-toc-title">文章目录</h2>
   <div class="post-toc-content">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#1-首先在mysql的官方网站下载mysql-community-server-5-7">1.首先在mysql的官方网站下载mysql community server 5.7</a></li>
-<li><a href="#2-解压文件为bin文件夹添加到环境变量">2.解压文件为bin文件夹添加到环境变量</a></li>
-<li><a href="#3-配置mysql配置文件">3.配置mysql配置文件</a></li>
-<li><a href="#4-启动mysql">4.启动mysql</a></li>
-<li><a href="#5-进入mysql">5.进入mysql</a></li>
-<li><a href="#6-重置root密码">6.重置root密码</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#1首先在mysql的官方网站下载mysql-community-server-57">1.首先在mysql的官方网站下载mysql community server 5.7</a></li>
+    <li><a href="#2解压文件为bin文件夹添加到环境变量">2.解压文件为bin文件夹添加到环境变量</a></li>
+    <li><a href="#3配置mysql配置文件">3.配置mysql配置文件</a></li>
+    <li><a href="#4启动mysql">4.启动mysql</a></li>
+    <li><a href="#5进入mysql">5.进入mysql</a></li>
+    <li><a href="#6重置root密码">6.重置root密码</a></li>
+  </ul>
 </nav>
   </div>
 </div>
 
     
     <div class="post-content">
-      
-
-<h2 id="1-首先在mysql的官方网站下载mysql-community-server-5-7">1.首先在mysql的官方网站下载mysql community server 5.7</h2>
-
+      <h2 id="1首先在mysql的官方网站下载mysql-community-server-57">1.首先在mysql的官方网站下载mysql community server 5.7</h2>
 <p>由于我的win10是64位的所以我选择64zip下载。</p>
-
 <p><a href="http://dev.mysql.com/downloads/mysql/">http://dev.mysql.com/downloads/mysql/</a></p>
-
-<p><img src="http://upload-images.jianshu.io/upload_images/677473-eb53d313cb10a643.png" alt="mysql下载页面
-" /></p>
-
+<p><img src="http://upload-images.jianshu.io/upload_images/677473-eb53d313cb10a643.png" alt="mysql下载页面"></p>
 <p>不用注册直接点击No thanks,just start my downlload.</p>
-
-<p><img src="http://upload-images.jianshu.io/upload_images/677473-6f62b804ca626676.png" alt="不用注册" /></p>
-
-<h2 id="2-解压文件为bin文件夹添加到环境变量">2.解压文件为bin文件夹添加到环境变量</h2>
-
+<p><img src="http://upload-images.jianshu.io/upload_images/677473-6f62b804ca626676.png" alt="不用注册"></p>
+<h2 id="2解压文件为bin文件夹添加到环境变量">2.解压文件为bin文件夹添加到环境变量</h2>
 <p>这部分很重要不赘述了。</p>
-
-<p><img src="http://upload-images.jianshu.io/upload_images/677473-892ca7aef4a4e1e1.png" alt="添加环境变量" /></p>
-
-<h2 id="3-配置mysql配置文件">3.配置mysql配置文件</h2>
-
-<p><img src="http://upload-images.jianshu.io/upload_images/677473-2e7fa21425341d63.png" alt="mysql配置文件" /></p>
-
+<p><img src="http://upload-images.jianshu.io/upload_images/677473-892ca7aef4a4e1e1.png" alt="添加环境变量"></p>
+<h2 id="3配置mysql配置文件">3.配置mysql配置文件</h2>
+<p><img src="http://upload-images.jianshu.io/upload_images/677473-2e7fa21425341d63.png" alt="mysql配置文件"></p>
 <p>配置mysql程序所在目录和mysql数据存放目录</p>
-
-<p><img src="http://upload-images.jianshu.io/upload_images/677473-9f176b64c397503f.png" alt="目录" /></p>
-
+<p><img src="http://upload-images.jianshu.io/upload_images/677473-9f176b64c397503f.png" alt="目录"></p>
 <p>记得去掉前面的#号</p>
-
-<p><img src="http://upload-images.jianshu.io/upload_images/677473-76fb364de7c1e2b2.png" alt="配置" /></p>
-
-<h2 id="4-启动mysql">4.启动mysql</h2>
-
+<p><img src="http://upload-images.jianshu.io/upload_images/677473-76fb364de7c1e2b2.png" alt="配置"></p>
+<h2 id="4启动mysql">4.启动mysql</h2>
 <p>以管理员身份启动cmd</p>
-
 <p>进入到mysql的解压的bin目录，在这里进行操作的目的是为了防止出错。</p>
-
-<p><img src="http://upload-images.jianshu.io/upload_images/677473-14a980adc054790b.png" alt="进入mysql解压文件夹" /></p>
-
+<p><img src="http://upload-images.jianshu.io/upload_images/677473-14a980adc054790b.png" alt="进入mysql解压文件夹"></p>
 <p>输入</p>
-
 <p><strong>mysqld -install</strong></p>
-
 <p>在windows上安装mysql的服务。</p>
-
-<p><img src="http://upload-images.jianshu.io/upload_images/677473-30f38363b4775294.png" alt="安装mysql服务" /></p>
-
+<p><img src="http://upload-images.jianshu.io/upload_images/677473-30f38363b4775294.png" alt="安装mysql服务"></p>
 <p>初始化data数据，这一步很重要不然mysql不能启动。</p>
-
 <p><strong>mysqld &ndash;initialize</strong></p>
-
 <p>这个时候我们才能看见data文件夹</p>
-
-<p><img src="http://upload-images.jianshu.io/upload_images/677473-c3a884a9409190a6.png" alt="data" /></p>
-
+<p><img src="http://upload-images.jianshu.io/upload_images/677473-c3a884a9409190a6.png" alt="data"></p>
 <p><strong>net start mysql</strong></p>
-
-<p><img src="http://upload-images.jianshu.io/upload_images/677473-a900a3decfcd2bd9.png" alt="启动mysql" /></p>
-
+<p><img src="http://upload-images.jianshu.io/upload_images/677473-a900a3decfcd2bd9.png" alt="启动mysql"></p>
 <p>我们可以在windows服务选项当中看到mysql的服务项目，可以设置成手动，使用的时候才启动它。</p>
-
-<p><img src="http://upload-images.jianshu.io/upload_images/677473-738a1703d5476222.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="服务" /></p>
-
-<h2 id="5-进入mysql">5.进入mysql</h2>
-
+<p><img src="http://upload-images.jianshu.io/upload_images/677473-738a1703d5476222.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="服务"></p>
+<h2 id="5进入mysql">5.进入mysql</h2>
 <p>因为我们初始化过mysql，mysql默认给我们一个初始密码，但是我没有设定保存到哪里所以我们找不到这个密码了O(∩_∩)O！！！</p>
-
 <p>不过没关系我们修改mysql配置文件my.ini，在配置文件mysqld下面插入skip-grant-tables,让我们跳过验证，再进入到mysql。这里注意要重启mysql配置才会生效。</p>
-
-<p><img src="http://upload-images.jianshu.io/upload_images/677473-0c1fe311189901ed.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="跳过验证" /></p>
-
-<p><img src="http://upload-images.jianshu.io/upload_images/677473-a3eb2be55b9dff57.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="进入mysql" /></p>
-
-<h2 id="6-重置root密码">6.重置root密码</h2>
+<p><img src="http://upload-images.jianshu.io/upload_images/677473-0c1fe311189901ed.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="跳过验证"></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/677473-a3eb2be55b9dff57.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="进入mysql"></p>
+<h2 id="6重置root密码">6.重置root密码</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-sql" data-lang="sql"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sql" data-lang="sql"><span class="k">update</span> <span class="n">mysql</span><span class="p">.</span><span class="k">user</span> <span class="k">set</span> <span class="n">authentication_string</span><span class="o">=</span><span class="n">password</span><span class="p">(</span><span class="s1">&#39;123456&#39;</span><span class="p">)</span> <span class="k">where</span> <span class="k">user</span><span class="o">=</span><span class="s1">&#39;root&#39;</span> <span class="k">and</span> <span class="k">Host</span> <span class="o">=</span> <span class="s1">&#39;localhost&#39;</span><span class="p">;</span></code></pre></td></tr></table>
+<pre class="chroma"><code class="language-sql" data-lang="sql"><span class="k">update</span> <span class="n">mysql</span><span class="p">.</span><span class="k">user</span> <span class="k">set</span> <span class="n">authentication_string</span><span class="o">=</span><span class="n">password</span><span class="p">(</span><span class="s1">&#39;123456&#39;</span><span class="p">)</span> <span class="k">where</span> <span class="k">user</span><span class="o">=</span><span class="s1">&#39;root&#39;</span> <span class="k">and</span> <span class="k">Host</span> <span class="o">=</span> <span class="s1">&#39;localhost&#39;</span><span class="p">;</span>
+</code></pre></td></tr></table>
 </div>
-</div>
-<p><img src="http://upload-images.jianshu.io/upload_images/677473-df49d7939914034b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="重置密码" /></p>
-
+</div><p><img src="http://upload-images.jianshu.io/upload_images/677473-df49d7939914034b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="重置密码"></p>
 <p>这样我们就可以用我们设置的密码登录mysql了。</p>
 
     </div>

@@ -39,7 +39,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.54.0" />
+<meta name="generator" content="Hugo 0.79.0" />
 
 
 <link rel="canonical" href="https://ppmoon.github.io/post/golang/golang-uint-cover-to-string/" />
@@ -68,15 +68,12 @@
 <meta property="og:description" content="问题golang uint类型如何转换成string 这里值得注意的地方时，本文说的不是uint8，uint64就是uint类型。 解决方法 1 2 3" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://ppmoon.github.io/post/golang/golang-uint-cover-to-string/" />
-<meta property="article:published_time" content="2018-04-28T21:18:01&#43;08:00"/>
-<meta property="article:modified_time" content="2018-04-28T21:18:01&#43;08:00"/>
-
+<meta property="article:published_time" content="2018-04-28T21:18:01+08:00" />
+<meta property="article:modified_time" content="2018-04-28T21:18:01+08:00" />
 <meta itemprop="name" content="golang-uint类型如何转换成string">
 <meta itemprop="description" content="问题golang uint类型如何转换成string 这里值得注意的地方时，本文说的不是uint8，uint64就是uint类型。 解决方法 1 2 3">
-
-
-<meta itemprop="datePublished" content="2018-04-28T21:18:01&#43;08:00" />
-<meta itemprop="dateModified" content="2018-04-28T21:18:01&#43;08:00" />
+<meta itemprop="datePublished" content="2018-04-28T21:18:01+08:00" />
+<meta itemprop="dateModified" content="2018-04-28T21:18:01+08:00" />
 <meta itemprop="wordCount" content="135">
 
 
@@ -353,43 +350,36 @@ if (!doNotTrack) {
   <h2 class="post-toc-title">文章目录</h2>
   <div class="post-toc-content">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#问题golang-uint类型如何转换成string">问题golang uint类型如何转换成string</a></li>
-<li><a href="#解决方法">解决方法</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#问题golang-uint类型如何转换成string">问题golang uint类型如何转换成string</a></li>
+    <li><a href="#解决方法">解决方法</a></li>
+  </ul>
 </nav>
   </div>
 </div>
 
     
     <div class="post-content">
-      
-
-<h2 id="问题golang-uint类型如何转换成string">问题golang uint类型如何转换成string</h2>
-
+      <h2 id="问题golang-uint类型如何转换成string">问题golang uint类型如何转换成string</h2>
 <p>这里值得注意的地方时，本文说的不是uint8，uint64就是uint类型。</p>
-
 <h2 id="解决方法">解决方法</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
-</span></pre></td>
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">var a uint = 1
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">var a uint = 1
 b := strconv.Itoa(int(a))
 c := string(b)
 d := string(a)
-fmt.Println(c)</pre></td></tr></table>
+fmt.Println(c)
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>使用strconv的Itoa方法先将uint转换成int类型，再将int类型转换成string。</p>
+</div><p>使用strconv的Itoa方法先将uint转换成int类型，再将int类型转换成string。</p>
 
     </div>
 

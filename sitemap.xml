@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <?xml-stylesheet type="text/xsl" href="https://ppmoon.github.io/sitemap.xsl"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
@@ -10,22 +9,8 @@
   </url>
   
   <url>
-    <loc>https://ppmoon.github.io/post/golang/golang-interview-questions-binary-tree-maximum-path-sum/</loc>
-    <lastmod>2020-07-06T00:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://ppmoon.github.io/post/golang/golang-interview-questions-is-balance-tree/</loc>
-    <lastmod>2020-06-28T00:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://ppmoon.github.io/post/golang/golang-interview-questions-binarry-tree-max-depth/</loc>
-    <lastmod>2020-06-22T00:00:00+08:00</lastmod>
+    <loc>https://ppmoon.github.io/tags/golang/</loc>
+    <lastmod>2020-03-11T21:16:01+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -33,6 +18,34 @@
   <url>
     <loc>https://ppmoon.github.io/post/golang/golang-output-log-to-file-and-console/</loc>
     <lastmod>2020-03-11T21:16:01+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ppmoon.github.io/post/</loc>
+    <lastmod>2020-03-11T21:16:01+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ppmoon.github.io/</loc>
+    <lastmod>2020-03-11T21:16:01+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ppmoon.github.io/tags/</loc>
+    <lastmod>2020-03-11T21:16:01+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ppmoon.github.io/tags/nas/</loc>
+    <lastmod>2019-09-17T20:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -54,6 +67,20 @@
   <url>
     <loc>https://ppmoon.github.io/post/shell/mac-how-to-get-time-in-shell-script/</loc>
     <lastmod>2019-08-26T14:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ppmoon.github.io/tags/shell/</loc>
+    <lastmod>2019-08-26T14:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ppmoon.github.io/tags/mysql/</loc>
+    <lastmod>2019-03-22T17:30:54+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -145,56 +172,7 @@
   <url>
     <loc>https://ppmoon.github.io/categories/</loc>
     <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ppmoon.github.io/tags/golang/</loc>
-    <lastmod>2020-07-06T00:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ppmoon.github.io/tags/mysql/</loc>
-    <lastmod>2019-03-22T17:30:54+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ppmoon.github.io/tags/nas/</loc>
-    <lastmod>2019-09-17T20:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ppmoon.github.io/</loc>
-    <lastmod>2019-07-19T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ppmoon.github.io/post/</loc>
-    <lastmod>2020-07-06T00:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ppmoon.github.io/tags/shell/</loc>
-    <lastmod>2019-08-26T14:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ppmoon.github.io/tags/</loc>
-    <lastmod>2020-07-06T00:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
+    <priority>0.5</priority>
   </url>
   
 </urlset>

@@ -39,7 +39,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.54.0" />
+<meta name="generator" content="Hugo 0.79.0" />
 
 
 <link rel="canonical" href="https://ppmoon.github.io/post/mysql/mysql-error-1820-hy000-solution/" />
@@ -68,15 +68,12 @@
 <meta property="og:description" content="本解决办法是针对如何错误提示： ERROR 1820 (HY000): You must reset your password using ALTER USER statement before executing this statement. 为了保证安全，mysql会对用户的密码设置使用期限，我们只要让他不过期就可以了" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://ppmoon.github.io/post/mysql/mysql-error-1820-hy000-solution/" />
-<meta property="article:published_time" content="2016-02-01T19:44:01&#43;08:00"/>
-<meta property="article:modified_time" content="2016-02-01T19:44:01&#43;08:00"/>
-
+<meta property="article:published_time" content="2016-02-01T19:44:01+08:00" />
+<meta property="article:modified_time" content="2016-02-01T19:44:01+08:00" />
 <meta itemprop="name" content="mysql ERROR 1820 (HY000)解决办法">
 <meta itemprop="description" content="本解决办法是针对如何错误提示： ERROR 1820 (HY000): You must reset your password using ALTER USER statement before executing this statement. 为了保证安全，mysql会对用户的密码设置使用期限，我们只要让他不过期就可以了">
-
-
-<meta itemprop="datePublished" content="2016-02-01T19:44:01&#43;08:00" />
-<meta itemprop="dateModified" content="2016-02-01T19:44:01&#43;08:00" />
+<meta itemprop="datePublished" content="2016-02-01T19:44:01+08:00" />
+<meta itemprop="dateModified" content="2016-02-01T19:44:01+08:00" />
 <meta itemprop="wordCount" content="124">
 
 
@@ -352,7 +349,7 @@ if (!doNotTrack) {
 <div class="post-toc" id="post-toc">
   <h2 class="post-toc-title">文章目录</h2>
   <div class="post-toc-content">
-    
+    <nav id="TableOfContents"></nav>
   </div>
 </div>
 
@@ -364,8 +361,7 @@ ERROR 1820 (HY000): You must reset your password using ALTER USER statement befo
 step 1: SET PASSWORD = PASSWORD(‘写你的新密码‘);
 step 2: ALTER USER ‘root‘@‘localhost‘ PASSWORD EXPIRE NEVER;
 step 3: flush privileges;</p>
-
-<p><img src="http://upload-images.jianshu.io/upload_images/677473-9be5717310a573d1.png" alt="图示" /></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/677473-9be5717310a573d1.png" alt="图示"></p>
 
     </div>
 

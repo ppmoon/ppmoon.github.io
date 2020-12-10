@@ -39,7 +39,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.54.0" />
+<meta name="generator" content="Hugo 0.79.0" />
 
 
 <link rel="canonical" href="https://ppmoon.github.io/post/golang/golang-reuse-http-request-body/" />
@@ -68,15 +68,12 @@
 <meta property="og:description" content="问题及场景 业务当中有需要分发http.request.body的场景。比如微信回调消息只能指定一个地址，所以期望可以复制一份消息发给其他服务" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://ppmoon.github.io/post/golang/golang-reuse-http-request-body/" />
-<meta property="article:published_time" content="2018-10-20T15:10:01&#43;08:00"/>
-<meta property="article:modified_time" content="2018-10-20T15:10:01&#43;08:00"/>
-
+<meta property="article:published_time" content="2018-10-20T15:10:01+08:00" />
+<meta property="article:modified_time" content="2018-10-20T15:10:01+08:00" />
 <meta itemprop="name" content="golang复用http-request-body">
 <meta itemprop="description" content="问题及场景 业务当中有需要分发http.request.body的场景。比如微信回调消息只能指定一个地址，所以期望可以复制一份消息发给其他服务">
-
-
-<meta itemprop="datePublished" content="2018-10-20T15:10:01&#43;08:00" />
-<meta itemprop="dateModified" content="2018-10-20T15:10:01&#43;08:00" />
+<meta itemprop="datePublished" content="2018-10-20T15:10:01+08:00" />
+<meta itemprop="dateModified" content="2018-10-20T15:10:01+08:00" />
 <meta itemprop="wordCount" content="581">
 
 
@@ -353,38 +350,27 @@ if (!doNotTrack) {
   <h2 class="post-toc-title">文章目录</h2>
   <div class="post-toc-content">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#问题及场景">问题及场景</a></li>
-<li><a href="#解决思路">解决思路</a></li>
-<li><a href="#如何才能将http-request-body复制使用呢">如何才能将http.request.body复制使用呢？</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#问题及场景">问题及场景</a></li>
+    <li><a href="#解决思路">解决思路</a></li>
+    <li><a href="#如何才能将httprequestbody复制使用呢">如何才能将http.request.body复制使用呢？</a></li>
+  </ul>
 </nav>
   </div>
 </div>
 
     
     <div class="post-content">
-      
-
-<h2 id="问题及场景">问题及场景</h2>
-
+      <h2 id="问题及场景">问题及场景</h2>
 <p>业务当中有需要分发http.request.body的场景。比如微信回调消息只能指定一个地址，所以期望可以复制一份消息发给其他服务。由服务B和接收微信回调的服务A一起处理微信回调信息。</p>
-
 <h2 id="解决思路">解决思路</h2>
-
 <p>最开始考虑的是直接转发http.request。使用<a href="https://studygolang.com/static/pkgdoc/pkg/net_http_httputil.htm#ReverseProxy">ReverseProxy</a>直接将http.request由服务A转发给服务B。但是微信涉及到验证等问题，完全调整好非常麻烦。所以转换思路，打算将http.request.body的内容直接post给服务B。</p>
-
 <p>可是http.request是readcloser。我们将http.request readAll的时候讲无法再次读取http.request里面的信息。</p>
-
-<h2 id="如何才能将http-request-body复制使用呢">如何才能将http.request.body复制使用呢？</h2>
-
+<h2 id="如何才能将httprequestbody复制使用呢">如何才能将http.request.body复制使用呢？</h2>
 <p>其中c表示的是http的上下文</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-go" data-lang="go"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -399,19 +385,14 @@ if (!doNotTrack) {
 	<span class="nx">bodyBytes</span><span class="p">,</span> <span class="nx">_</span> <span class="p">=</span> <span class="nx">ioutil</span><span class="p">.</span><span class="nf">ReadAll</span><span class="p">(</span><span class="nx">c</span><span class="p">.</span><span class="nx">Request</span><span class="p">.</span><span class="nx">Body</span><span class="p">)</span>
 <span class="p">}</span>
 <span class="c1">// 把刚刚读出来的再写进去
-</span><span class="c1"></span><span class="nx">c</span><span class="p">.</span><span class="nx">Request</span><span class="p">.</span><span class="nx">Body</span> <span class="p">=</span> <span class="nx">ioutil</span><span class="p">.</span><span class="nf">NopCloser</span><span class="p">(</span><span class="nx">bytes</span><span class="p">.</span><span class="nf">NewBuffer</span><span class="p">(</span><span class="nx">bodyBytes</span><span class="p">))</span></code></pre></td></tr></table>
+</span><span class="c1"></span><span class="nx">c</span><span class="p">.</span><span class="nx">Request</span><span class="p">.</span><span class="nx">Body</span> <span class="p">=</span> <span class="nx">ioutil</span><span class="p">.</span><span class="nf">NopCloser</span><span class="p">(</span><span class="nx">bytes</span><span class="p">.</span><span class="nf">NewBuffer</span><span class="p">(</span><span class="nx">bodyBytes</span><span class="p">))</span>
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>1.我们先将body从http.request里面读取出来，保存到一个变量里面。</p>
-
+</div><p>1.我们先将body从http.request里面读取出来，保存到一个变量里面。</p>
 <p>2.然后再将变量里面的数据使用ioutil.NopCloser方法写回到http.request里面。</p>
-
 <p><a href="https://golang.org/pkg/io/ioutil/#NopCloser">https://golang.org/pkg/io/ioutil/#NopCloser</a></p>
-
 <p>NopCloser returns a ReadCloser with a no-op Close method wrapping the provided Reader r.</p>
-
 <p>NopCloser用一个无操作的Close方法包装Reader r返回一个ReadCloser接口。</p>
-
 <p>这样我们就可以再次使用c.request来进行处理了。</p>
 
     </div>

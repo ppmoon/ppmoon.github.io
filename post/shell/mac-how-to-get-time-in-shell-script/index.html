@@ -39,7 +39,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.54.0" />
+<meta name="generator" content="Hugo 0.79.0" />
 
 
 <link rel="canonical" href="https://ppmoon.github.io/post/shell/mac-how-to-get-time-in-shell-script/" />
@@ -68,15 +68,12 @@
 <meta property="og:description" content="Mac如何在shell脚本当中获取时间 获取今天的时间 1 2 date 2019年 8月26日 星期一 14时02分23秒 CST 直接输入date就可以获取当前的时间" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://ppmoon.github.io/post/shell/mac-how-to-get-time-in-shell-script/" />
-<meta property="article:published_time" content="2019-08-26T14:00:00&#43;08:00"/>
-<meta property="article:modified_time" content="2019-08-26T14:00:00&#43;08:00"/>
-
+<meta property="article:published_time" content="2019-08-26T14:00:00+08:00" />
+<meta property="article:modified_time" content="2019-08-26T14:00:00+08:00" />
 <meta itemprop="name" content="Mac如何在shell脚本当中获取时间">
 <meta itemprop="description" content="Mac如何在shell脚本当中获取时间 获取今天的时间 1 2 date 2019年 8月26日 星期一 14时02分23秒 CST 直接输入date就可以获取当前的时间">
-
-
-<meta itemprop="datePublished" content="2019-08-26T14:00:00&#43;08:00" />
-<meta itemprop="dateModified" content="2019-08-26T14:00:00&#43;08:00" />
+<meta itemprop="datePublished" content="2019-08-26T14:00:00+08:00" />
+<meta itemprop="dateModified" content="2019-08-26T14:00:00+08:00" />
 <meta itemprop="wordCount" content="428">
 
 
@@ -353,63 +350,55 @@ if (!doNotTrack) {
   <h2 class="post-toc-title">文章目录</h2>
   <div class="post-toc-content">
     <nav id="TableOfContents">
-<ul>
-<li><a href="#mac如何在shell脚本当中获取时间">Mac如何在shell脚本当中获取时间</a>
-<ul>
-<li><a href="#获取今天的时间">获取今天的时间</a></li>
-<li><a href="#时间格式化">时间格式化</a></li>
-<li><a href="#获取昨天的时间">获取昨天的时间</a></li>
-<li><a href="#总结">总结</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#获取今天的时间">获取今天的时间</a></li>
+    <li><a href="#时间格式化">时间格式化</a></li>
+    <li><a href="#获取昨天的时间">获取昨天的时间</a></li>
+    <li><a href="#总结">总结</a></li>
+  </ul>
 </nav>
   </div>
 </div>
 
     
     <div class="post-content">
-      
-
-<h1 id="mac如何在shell脚本当中获取时间">Mac如何在shell脚本当中获取时间</h1>
-
+      <h1 id="mac如何在shell脚本当中获取时间">Mac如何在shell脚本当中获取时间</h1>
 <h2 id="获取今天的时间">获取今天的时间</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-shell" data-lang="shell">date
-2019年 8月26日 星期一 14时02分23秒 CST</code></pre></td></tr></table>
+2019年 8月26日 星期一 14时02分23秒 CST
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>直接输入date就可以获取当前的时间（CST时间）</p>
+</div><p>直接输入date就可以获取当前的时间（CST时间）</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-shell" data-lang="shell">date -jnRu
-Mon, <span class="m">26</span> Aug <span class="m">2019</span> <span class="m">06</span>:06:29 +0000</code></pre></td></tr></table>
+Mon, <span class="m">26</span> Aug <span class="m">2019</span> 06:06:29 +0000
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>如果加上参数<code>-jnRu</code>会显示格林威治时间(GMT)</p>
-
+</div><p>如果加上参数<code>-jnRu</code>会显示格林威治时间(GMT)</p>
 <h2 id="时间格式化">时间格式化</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-shell" data-lang="shell">date +<span class="s2">&#34;%Y-%m-%d %H:%M:%S&#34;</span>
-<span class="m">2019</span>-08-26 <span class="m">14</span>:28:14</code></pre></td></tr></table>
+2019-08-26 14:28:14
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>格式化数据可以直接使用加号，然后配合日期符号输出
+</div><p>格式化数据可以直接使用加号，然后配合日期符号输出
 常用日期符号</p>
-
 <table>
 <thead>
 <tr>
@@ -417,50 +406,40 @@ Mon, <span class="m">26</span> Aug <span class="m">2019</span> <span class="m">0
 <th>代表意义</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>%Y</td>
 <td>年</td>
 </tr>
-
 <tr>
 <td>%m</td>
 <td>月</td>
 </tr>
-
 <tr>
 <td>%d</td>
 <td>日</td>
 </tr>
-
 <tr>
 <td>%H</td>
 <td>时</td>
 </tr>
-
 <tr>
 <td>%M</td>
 <td>分</td>
 </tr>
-
 <tr>
 <td>%S</td>
 <td>秒</td>
 </tr>
 </tbody>
 </table>
-
 <h2 id="获取昨天的时间">获取昨天的时间</h2>
-
 <p>mac下的date命令计算时间的方法和linux会不太一样</p>
-
 <p>命令参数为<code>[-v[+|-]val[ymwdHMS]]</code></p>
-
 <p>date 后加 -v 加减一个值，最后填写格式化参数格式化输出。都是在当前时间的基础上进行加减运算的</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -475,34 +454,33 @@ Mon, <span class="m">26</span> Aug <span class="m">2019</span> <span class="m">0
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-shell" data-lang="shell">date -v-1d +<span class="s2">&#34;%Y-%m-%d&#34;</span>
-<span class="m">2019</span>-08-25
+2019-08-25
 date -v-1y +<span class="s2">&#34;%Y-%m-%d&#34;</span>
-<span class="m">2018</span>-08-26
+2018-08-26
 date -v+1m +<span class="s2">&#34;%Y-%m-%d&#34;</span>
-<span class="m">2019</span>-09-26
+2019-09-26
 date -v+1H +<span class="s2">&#34;%Y-%m-%d %H:%M:%S&#34;</span>
-<span class="m">2019</span>-08-26 <span class="m">15</span>:40:36
+2019-08-26 15:40:36
 date -v+1M +<span class="s2">&#34;%Y-%m-%d %H:%M:%S&#34;</span>
-<span class="m">2019</span>-08-26 <span class="m">14</span>:41:58
+2019-08-26 14:41:58
 date -v+1S +<span class="s2">&#34;%Y-%m-%d %H:%M:%S&#34;</span>
-<span class="m">2019</span>-08-26 <span class="m">14</span>:40:12</code></pre></td></tr></table>
+2019-08-26 14:40:12
+</code></pre></td></tr></table>
 </div>
-</div>
-<h2 id="总结">总结</h2>
-
+</div><h2 id="总结">总结</h2>
 <p>编写shell脚本执行的时候需要使用到时间，更多关于date命令的使用方法可以使用</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">man date</code></pre></td></tr></table>
+<pre class="chroma"><code class="language-shell" data-lang="shell">man date
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>进行查看详细的使用方法或者输入一个错误的参数比如</p>
+</div><p>进行查看详细的使用方法或者输入一个错误的参数比如</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -511,10 +489,10 @@ date -v+1S +<span class="s2">&#34;%Y-%m-%d %H:%M:%S&#34;</span>
 <pre class="chroma"><code class="language-shell" data-lang="shell">date h
 date: illegal <span class="nb">time</span> format
 usage: date <span class="o">[</span>-jnRu<span class="o">]</span> <span class="o">[</span>-d dst<span class="o">]</span> <span class="o">[</span>-r seconds<span class="o">]</span> <span class="o">[</span>-t west<span class="o">]</span> <span class="o">[</span>-v<span class="o">[</span>+<span class="p">|</span>-<span class="o">]</span>val<span class="o">[</span>ymwdHMS<span class="o">]]</span> ... 
-            <span class="o">[</span>-f fmt date <span class="p">|</span> <span class="o">[[[</span>mm<span class="o">]</span>dd<span class="o">]</span>HH<span class="o">]</span>MM<span class="o">[[</span>cc<span class="o">]</span>yy<span class="o">][</span>.ss<span class="o">]]</span> <span class="o">[</span>+format<span class="o">]</span></code></pre></td></tr></table>
+            <span class="o">[</span>-f fmt date <span class="p">|</span> <span class="o">[[[</span>mm<span class="o">]</span>dd<span class="o">]</span>HH<span class="o">]</span>MM<span class="o">[[</span>cc<span class="o">]</span>yy<span class="o">][</span>.ss<span class="o">]]</span> <span class="o">[</span>+format<span class="o">]</span>
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>会提示提示部分使用方法。</p>
+</div><p>会提示提示部分使用方法。</p>
 
     </div>
 
