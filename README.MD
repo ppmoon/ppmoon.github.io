@@ -1,1 +1,2 @@
 # ppmoon's blog
+yes
