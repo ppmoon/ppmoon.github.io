@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+    <channel>
+        <title></title>
+        <link>undefined</link>
+        <description>undefined</description>
+        <lastBuildDate>Mon, 24 Oct 2022 09:13:27 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>Joplin Pages Publisher</generator>
+        <item>
+            <title><![CDATA[Hello World!]]></title>
+            <guid>003be30f01ec457d901c77df625efe41</guid>
+            <pubDate>Mon, 24 Oct 2022 09:12:30 GMT</pubDate>
+            <content:encoded><![CDATA[Hello World!]]></content:encoded>
+        </item>
+    </channel>
+</rss>

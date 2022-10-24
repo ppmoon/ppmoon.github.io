@@ -1,2 +1,0 @@
-# ppmoon's blog
-yes
