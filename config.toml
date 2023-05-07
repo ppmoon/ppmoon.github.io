@@ -1,0 +1,63 @@
+# This is a simple configuration.
+# If you want to see the full configuration, please check `full-config.toml` .
+# And see https://gohugo.io/getting-started/configuration/ .
+
+baseURL = "https://ppmoon.github.io/"
+title = "PPmoon's Blog"
+theme = "pure-hugo-theme"
+
+hasCJKLanguage = true     # has chinese/japanese/korean ? # 自动检测是否包含 中文\日文\韩文
+
+languageCode = "zh-cn"
+[[menu.main]]
+identifier = "home"
+name = "Home"
+url = "/"
+weight = 1
+
+[[menu.main]]
+identifier = "about"
+name = "About"
+url = "/about/"
+weight = 2
+
+[[menu.main]]
+identifier = "posts"
+name = "Posts"
+url = "/posts/"
+weight = 3
+
+[[menu.main]]
+identifier = "categories"
+name = "Categories"
+url = "/categories/"
+weight = 4
+
+[[menu.main]]
+identifier = "tags"
+name = "Tags"
+url = "/tags/"
+weight = 5
+
+[params]
+abbrDateFmt = "Jan 2"
+author = "PPmoon"
+brandIconFile = "images/brandIcon.svg"
+dateFmt = "2006-01-02"
+description = "PPmoon's Blog"
+
+  [[params.social]]
+  name = "GitHub"
+  url = "https://github.com/ppmoon"
+
+[markup]
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = true
+    hl_Lines = ""
+    lineNoStart = 1
+    lineNos = false
+    lineNumbersInTable = false
+    noClasses = true
+    style = "emacs"
+    tabWidth = 4
